@@ -13,6 +13,15 @@ import {
   MapPin,
   Phone,
   Instagram,
+  Laptop,
+  Headset,
+  BadgePercent,
+  Building2,
+  Layers,
+  Award,
+  Users,
+  Zap,
+  Rocket,
 } from "lucide-react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
