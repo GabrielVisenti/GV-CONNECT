@@ -176,22 +176,19 @@ function LogoStage() {
       <div className="absolute h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] rounded-full bg-gold/25 blur-3xl animate-glow" />
 
       {/* Logo */}
-      <div className="relative h-44 w-44 sm:h-56 sm:w-56 flex items-center justify-center animate-float">
+      <div className="relative h-48 w-48 sm:h-60 sm:w-60 flex items-center justify-center animate-float">
         <img
           src={logo.url}
           alt="GV Connect"
+          loading="eager"
+          decoding="async"
           className="relative h-full w-full object-contain drop-shadow-[0_25px_60px_rgba(212,175,55,0.55)]"
         />
       </div>
-
-      {/* Corner brackets framing the logo */}
-      <Bracket className="top-1/2 left-1/2 -translate-x-[150px] -translate-y-[100px]" />
-      <Bracket className="top-1/2 left-1/2 translate-x-[126px] -translate-y-[100px] rotate-90" />
-      <Bracket className="top-1/2 left-1/2 translate-x-[126px] translate-y-[76px] rotate-180" />
-      <Bracket className="top-1/2 left-1/2 -translate-x-[150px] translate-y-[76px] -rotate-90" />
     </div>
   );
 }
+
 
 function Bracket({ className = "" }: { className?: string }) {
   return (
