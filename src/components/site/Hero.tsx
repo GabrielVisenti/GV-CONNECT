@@ -1,4 +1,4 @@
-import { ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
 import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
 export function Hero({ onQuote }: { onQuote: () => void }) {
