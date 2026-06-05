@@ -6,9 +6,11 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { QuoteModal, type QuoteType } from "@/components/site/QuoteModal";
 import {
   Differentials,
+  EmpresasResultados,
   LenovoSection,
   Solutions,
   Brands,
+  TecnologiaEmpresas,
   Licitacoes,
   ValueList,
   About,
