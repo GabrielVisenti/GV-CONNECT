@@ -22,7 +22,9 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
-          Tecnologia Corporativa Premium
+          Revenda Autorizada Lenovo
+          <span className="hidden sm:inline opacity-50">·</span>
+          <span className="hidden sm:inline">Parceira de marcas líderes</span>
         </div>
 
         {/* Hero logo composition */}
@@ -34,13 +36,14 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         </h1>
 
         <p className="mt-4 max-w-2xl text-lg sm:text-xl lg:text-2xl text-platinum/90 font-light leading-tight">
-          Conectando empresas ao <span className="text-gold-gradient font-medium">futuro</span>.
+          Equipamentos originais. <span className="text-gold-gradient font-medium">Resultados reais.</span>
         </p>
 
         <p className="mt-3 max-w-2xl text-sm sm:text-base text-platinum/65 leading-relaxed">
-          Equipamentos, suprimentos, manutenção especializada e soluções tecnológicas
-          para empresas e órgãos públicos que exigem resultados.
+          Parceiro estratégico em tecnologia para empresas e órgãos públicos —
+          distribuição, soluções e atendimento com a procedência das maiores marcas do mercado.
         </p>
+
 
         {/* CTAs */}
         <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
