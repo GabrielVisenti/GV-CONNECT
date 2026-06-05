@@ -11,7 +11,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
       {/* Background layers */}
       <BackgroundLayers />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-28 lg:pt-32 pb-20 lg:pb-24 flex flex-col items-center text-center">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-28 lg:pt-32 pb-28 lg:pb-36 flex flex-col items-center text-center">
         {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
