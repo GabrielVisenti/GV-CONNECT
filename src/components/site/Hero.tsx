@@ -1,97 +1,138 @@
-import { ArrowRight } from "lucide-react";
-import logo from "@/assets/gv-connect-logo.png.asset.json";
+import { ArrowRight, ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
+import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
 export function Hero({ onQuote }: { onQuote: () => void }) {
+  const highlights = [
+    { icon: ShieldCheck, label: "Revenda Autorizada Lenovo" },
+    { icon: Building2, label: "Atendimento Corporativo" },
+    { icon: Handshake, label: "Distribuidores Parceiros" },
+    { icon: Truck, label: "Entrega Rápida e Confiável" },
+    { icon: Headset, label: "Empresas e Órgãos Públicos" },
+  ];
+
   return (
-    <section id="top" className="relative min-h-[100svh] overflow-hidden bg-hero text-platinum">
-      {/* tech grid */}
-      <div className="absolute inset-0 tech-grid opacity-60" />
-      {/* ambient orbs */}
-      <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full bg-gold/20 blur-[140px] animate-glow" />
-      <div className="absolute -bottom-40 -left-20 h-[460px] w-[460px] rounded-full bg-navy-soft/40 blur-[130px]" />
+    <section
+      id="top"
+      className="relative min-h-[100svh] overflow-hidden bg-hero text-platinum"
+    >
+      {/* Background layers */}
+      <BackgroundLayers />
 
-      {/* faint particles */}
-      <Particles />
-
-      <div className="relative mx-auto max-w-5xl px-6 lg:px-10 pt-36 pb-24 lg:pt-44 lg:pb-32 flex flex-col items-center text-center">
-        {/* Premium logo showcase */}
-        <div className="relative">
-          {/* rotating gold rings */}
-          <div className="absolute inset-0 -m-10 rounded-full border border-gold/20 animate-spin-slow" />
-          <div className="absolute inset-0 -m-20 rounded-full border border-gold/10 animate-spin-slower" />
-          {/* glow */}
-          <div className="absolute inset-0 -m-6 rounded-full bg-gold/20 blur-3xl animate-glow" />
-
-          <div className="relative h-44 w-44 sm:h-56 sm:w-56 rounded-[2rem] bg-[image:var(--gradient-navy)] ring-1 ring-gold/30 shadow-elevated overflow-hidden">
-            <div className="absolute inset-0 tech-grid opacity-50" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.78_0.13_82_/0.22),transparent_65%)]" />
-            <div className="absolute inset-0 flex items-center justify-center p-7">
-              <img
-                src={logo.url}
-                alt="GV Connect logo"
-                className="w-full h-full object-contain animate-float drop-shadow-[0_20px_50px_rgba(212,175,55,0.45)]"
-              />
-            </div>
-            <Corner className="top-3 left-3" />
-            <Corner className="top-3 right-3 rotate-90" />
-            <Corner className="bottom-3 right-3 rotate-180" />
-            <Corner className="bottom-3 left-3 -rotate-90" />
-          </div>
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-36 lg:pt-40 pb-24 lg:pb-28 flex flex-col items-center text-center">
+        {/* Eyebrow badge */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
+          Tecnologia Corporativa Premium
         </div>
 
-        <h1 className="mt-12 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+        {/* Hero logo composition */}
+        <LogoStage />
+
+        {/* Title */}
+        <h1 className="mt-14 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
           <span className="text-shimmer">GV CONNECT</span>
         </h1>
-        <p className="mt-5 text-xl sm:text-2xl text-platinum/90 font-light max-w-3xl">
-          Tecnologia que impulsiona negócios.
-        </p>
-        <p className="mt-5 max-w-2xl text-base sm:text-lg text-platinum/70 leading-relaxed">
-          Conectamos empresas e órgãos públicos às melhores soluções em tecnologia,
-          suprimentos e inovação — com atendimento especializado, condições competitivas
-          e entrega confiável.
+
+        <p className="mt-6 max-w-3xl text-xl sm:text-2xl lg:text-3xl text-platinum/90 font-light leading-tight">
+          Conectando empresas ao <span className="text-gold-gradient font-medium">futuro</span>.
         </p>
 
+        <p className="mt-5 max-w-2xl text-base sm:text-lg text-platinum/65 leading-relaxed">
+          Equipamentos, suprimentos, manutenção especializada e soluções tecnológicas
+          para empresas e órgãos públicos que exigem resultados.
+        </p>
+
+        {/* CTAs */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onQuote}
-            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.03]"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.04]"
           >
+            <span className="absolute inset-0 rounded-full bg-gold/40 blur-xl opacity-60 group-hover:opacity-100 transition-opacity -z-10" />
             Solicitar Cotação
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </button>
           <a
-            href={`https://wa.me/5544988480543`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors"
+            href="#solucoes"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors backdrop-blur"
           >
-            Falar com Especialista
+            Conhecer Soluções
           </a>
         </div>
 
-        <p className="mt-10 text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-soft/80">
-          Parceiros estratégicos para empresas e órgãos públicos.
-        </p>
+        {/* Highlights strip */}
+        <div className="mt-14 w-full max-w-5xl">
+          <div className="relative rounded-2xl border border-gold/15 bg-white/[0.03] backdrop-blur-md px-3 sm:px-6 py-4 shadow-elevated">
+            <div className="absolute -top-px inset-x-12 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+            <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-platinum/80">
+              {highlights.map((h) => (
+                <li key={h.label} className="flex items-center gap-2">
+                  <h.icon size={14} className="text-gold" />
+                  <span>{h.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
-      {/* bottom fade to white */}
-      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-background" />
+      {/* fade to next section */}
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-28 bg-gradient-to-b from-transparent to-background" />
     </section>
   );
 }
 
-function Corner({ className = "" }: { className?: string }) {
-  return <span className={`absolute h-6 w-6 border-t border-l border-gold/70 ${className}`} />;
+/* ----------------------------- Background ------------------------------ */
+
+function BackgroundLayers() {
+  return (
+    <>
+      {/* deep gradient already from bg-hero. Add layers: */}
+      <div className="absolute inset-0 tech-grid opacity-50" />
+
+      {/* radial highlight behind logo */}
+      <div className="absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2 h-[640px] w-[640px] rounded-full bg-gold/15 blur-[160px] animate-glow" />
+      <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full bg-navy-soft/50 blur-[140px]" />
+      <div className="absolute -bottom-40 -left-20 h-[480px] w-[480px] rounded-full bg-navy/60 blur-[140px]" />
+
+      {/* faint diagonal connection lines (SVG) */}
+      <svg
+        className="absolute inset-0 h-full w-full opacity-[0.18]"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        <defs>
+          <linearGradient id="lineGold" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stopColor="oklch(0.86 0.10 86)" stopOpacity="0" />
+            <stop offset="50%" stopColor="oklch(0.78 0.13 82)" stopOpacity="1" />
+            <stop offset="100%" stopColor="oklch(0.86 0.10 86)" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {[
+          "M0,180 L1440,420",
+          "M0,720 L1440,360",
+          "M0,520 L1440,640",
+          "M0,80 L1440,820",
+        ].map((d, i) => (
+          <path key={i} d={d} stroke="url(#lineGold)" strokeWidth="1" fill="none" />
+        ))}
+      </svg>
+
+      {/* floating particles */}
+      <Particles />
+    </>
+  );
 }
 
 function Particles() {
-  const dots = Array.from({ length: 24 });
+  const dots = Array.from({ length: 36 });
   return (
     <div className="absolute inset-0 overflow-hidden">
       {dots.map((_, i) => {
-        const left = (i * 41) % 100;
-        const top = (i * 67) % 100;
-        const delay = (i % 8) * 0.6;
+        const left = (i * 37) % 100;
+        const top = (i * 53) % 100;
+        const delay = (i % 9) * 0.5;
         const size = 1 + (i % 3);
         return (
           <span
@@ -108,5 +149,55 @@ function Particles() {
         );
       })}
     </div>
+  );
+}
+
+/* ----------------------------- Logo Stage ------------------------------ */
+
+function LogoStage() {
+  return (
+    <div className="relative mt-12 flex items-center justify-center">
+      {/* Concentric rotating rings */}
+      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] rounded-full border border-gold/15 animate-spin-slower" />
+      <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-gold/20 animate-spin-slow" />
+      <div className="absolute h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] rounded-full border border-gold/30" />
+
+      {/* Orbit dots */}
+      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] animate-spin-slow">
+        <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold shadow-gold" />
+        <span className="absolute right-0 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-gold-soft" />
+      </div>
+      <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] animate-spin-slower">
+        <span className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-gold/80" />
+        <span className="absolute left-1/2 bottom-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold shadow-gold" />
+      </div>
+
+      {/* Glow halo behind logo */}
+      <div className="absolute h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] rounded-full bg-gold/25 blur-3xl animate-glow" />
+
+      {/* Logo */}
+      <div className="relative h-44 w-44 sm:h-56 sm:w-56 flex items-center justify-center animate-float">
+        <img
+          src={logo.url}
+          alt="GV Connect"
+          className="relative h-full w-full object-contain drop-shadow-[0_25px_60px_rgba(212,175,55,0.55)]"
+        />
+      </div>
+
+      {/* Corner brackets framing the logo */}
+      <Bracket className="top-1/2 left-1/2 -translate-x-[150px] -translate-y-[100px]" />
+      <Bracket className="top-1/2 left-1/2 translate-x-[126px] -translate-y-[100px] rotate-90" />
+      <Bracket className="top-1/2 left-1/2 translate-x-[126px] translate-y-[76px] rotate-180" />
+      <Bracket className="top-1/2 left-1/2 -translate-x-[150px] translate-y-[76px] -rotate-90" />
+    </div>
+  );
+}
+
+function Bracket({ className = "" }: { className?: string }) {
+  return (
+    <span
+      aria-hidden
+      className={`absolute h-6 w-6 border-t-2 border-l-2 border-gold/70 ${className}`}
+    />
   );
 }
