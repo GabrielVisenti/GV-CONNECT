@@ -56,20 +56,6 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
           </a>
         </div>
 
-        {/* Highlights strip */}
-        <div className="mt-12 w-full max-w-5xl">
-          <div className="relative rounded-2xl border border-gold/15 bg-white/[0.03] backdrop-blur-md px-3 sm:px-6 py-4 shadow-elevated">
-            <div className="absolute -top-px inset-x-12 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-            <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-platinum/80">
-              {highlights.map((h) => (
-                <li key={h.label} className="flex items-center gap-2">
-                  <h.icon size={14} className="text-gold" />
-                  <span>{h.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
 
       {/* fade to next section */}
