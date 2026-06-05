@@ -1,14 +1,7 @@
-import { ArrowRight, ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
 export function Hero({ onQuote }: { onQuote: () => void }) {
-  const highlights = [
-    { icon: ShieldCheck, label: "Soluções com Garantia" },
-    { icon: Building2, label: "Atendimento Corporativo" },
-    { icon: Handshake, label: "Distribuidores Parceiros" },
-    { icon: Truck, label: "Entrega Rápida e Confiável" },
-    { icon: Headset, label: "Empresas e Órgãos Públicos" },
-  ];
 
   return (
     <section
@@ -18,7 +11,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
       {/* Background layers */}
       <BackgroundLayers />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-28 lg:pt-32 pb-20 lg:pb-24 flex flex-col items-center text-center">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-28 lg:pt-32 pb-28 lg:pb-36 flex flex-col items-center text-center">
         {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
@@ -31,7 +24,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         <LogoStage />
 
         {/* Title */}
-        <h1 className="mt-6 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+        <h1 className="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
           <span className="text-shimmer">GV CONNECT</span>
         </h1>
 
@@ -46,7 +39,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
 
 
         {/* CTAs */}
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onQuote}
             className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.04]"
@@ -63,20 +56,6 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
           </a>
         </div>
 
-        {/* Highlights strip */}
-        <div className="mt-12 w-full max-w-5xl">
-          <div className="relative rounded-2xl border border-gold/15 bg-white/[0.03] backdrop-blur-md px-3 sm:px-6 py-4 shadow-elevated">
-            <div className="absolute -top-px inset-x-12 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-            <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-platinum/80">
-              {highlights.map((h) => (
-                <li key={h.label} className="flex items-center gap-2">
-                  <h.icon size={14} className="text-gold" />
-                  <span>{h.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
 
       {/* fade to next section */}
@@ -159,7 +138,7 @@ function Particles() {
 
 function LogoStage() {
   return (
-    <div className="relative mt-12 flex items-center justify-center">
+    <div className="relative mt-14 flex items-center justify-center">
       {/* Concentric rotating rings */}
       <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] rounded-full border border-gold/15 animate-spin-slower" />
       <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-gold/20 animate-spin-slow" />
