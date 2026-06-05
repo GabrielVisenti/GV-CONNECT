@@ -1,9 +1,9 @@
-import { ArrowRight, ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
+import { ShieldCheck, Headset, Handshake, Truck, Building2 } from "lucide-react";
 import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
 export function Hero({ onQuote }: { onQuote: () => void }) {
   const highlights = [
-    { icon: ShieldCheck, label: "Revenda Autorizada Lenovo" },
+    { icon: ShieldCheck, label: "Soluções com Garantia" },
     { icon: Building2, label: "Atendimento Corporativo" },
     { icon: Handshake, label: "Distribuidores Parceiros" },
     { icon: Truck, label: "Entrega Rápida e Confiável" },
