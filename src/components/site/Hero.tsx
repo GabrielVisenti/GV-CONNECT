@@ -3,7 +3,7 @@ import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
 export function Hero({ onQuote }: { onQuote: () => void }) {
   const highlights = [
-    { icon: ShieldCheck, label: "Revenda Autorizada Lenovo" },
+    { icon: ShieldCheck, label: "Soluções com Garantia" },
     { icon: Building2, label: "Atendimento Corporativo" },
     { icon: Handshake, label: "Distribuidores Parceiros" },
     { icon: Truck, label: "Entrega Rápida e Confiável" },
@@ -22,9 +22,9 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
-          Revenda Autorizada Lenovo
+          Tecnologia que gera resultados
           <span className="hidden sm:inline opacity-50">·</span>
-          <span className="hidden sm:inline">Parceira de marcas líderes</span>
+          <span className="hidden sm:inline">Atendimento que faz a diferença</span>
         </div>
 
         {/* Hero logo composition */}
