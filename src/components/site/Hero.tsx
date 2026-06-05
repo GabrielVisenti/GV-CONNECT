@@ -18,7 +18,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
       {/* Background layers */}
       <BackgroundLayers />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-36 lg:pt-40 pb-24 lg:pb-28 flex flex-col items-center text-center">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-10 pt-28 lg:pt-32 pb-20 lg:pb-24 flex flex-col items-center text-center">
         {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-4 py-1.5 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold-soft backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow" />
@@ -29,24 +29,24 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         <LogoStage />
 
         {/* Title */}
-        <h1 className="mt-14 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+        <h1 className="mt-6 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
           <span className="text-shimmer">GV CONNECT</span>
         </h1>
 
-        <p className="mt-6 max-w-3xl text-xl sm:text-2xl lg:text-3xl text-platinum/90 font-light leading-tight">
+        <p className="mt-4 max-w-2xl text-lg sm:text-xl lg:text-2xl text-platinum/90 font-light leading-tight">
           Conectando empresas ao <span className="text-gold-gradient font-medium">futuro</span>.
         </p>
 
-        <p className="mt-5 max-w-2xl text-base sm:text-lg text-platinum/65 leading-relaxed">
+        <p className="mt-3 max-w-2xl text-sm sm:text-base text-platinum/65 leading-relaxed">
           Equipamentos, suprimentos, manutenção especializada e soluções tecnológicas
           para empresas e órgãos públicos que exigem resultados.
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onQuote}
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.04]"
+            className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.04]"
           >
             <span className="absolute inset-0 rounded-full bg-gold/40 blur-xl opacity-60 group-hover:opacity-100 transition-opacity -z-10" />
             Solicitar Cotação
@@ -54,14 +54,14 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
           </button>
           <a
             href="#solucoes"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors backdrop-blur"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors backdrop-blur"
           >
             Conhecer Soluções
           </a>
         </div>
 
         {/* Highlights strip */}
-        <div className="mt-14 w-full max-w-5xl">
+        <div className="mt-12 w-full max-w-5xl">
           <div className="relative rounded-2xl border border-gold/15 bg-white/[0.03] backdrop-blur-md px-3 sm:px-6 py-4 shadow-elevated">
             <div className="absolute -top-px inset-x-12 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
             <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-platinum/80">
