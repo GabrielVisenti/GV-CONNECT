@@ -144,10 +144,13 @@
   0%, 100% { opacity: 0.55 }
   50% { opacity: 1 }
 }
+@keyframes spin-slow { to { transform: rotate(360deg) } }
 
 @utility animate-float { animation: float-slow 6s ease-in-out infinite; }
 @utility animate-marquee { animation: marquee 40s linear infinite; }
 @utility animate-glow { animation: glow-pulse 3.5s ease-in-out infinite; }
+@utility animate-spin-slow { animation: spin-slow 24s linear infinite; }
+@utility animate-spin-slower { animation: spin-slow 60s linear infinite reverse; }
 @utility text-shimmer {
   background: linear-gradient(90deg, var(--gold-soft) 0%, #fff 50%, var(--gold) 100%);
   background-size: 200% 100%;

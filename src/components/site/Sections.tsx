@@ -13,6 +13,15 @@ import {
   MapPin,
   Phone,
   Instagram,
+  Laptop,
+  Headset,
+  BadgePercent,
+  Building2,
+  Layers,
+  Award,
+  Users,
+  Zap,
+  Rocket,
 } from "lucide-react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
@@ -43,6 +52,108 @@ export function Differentials() {
               </div>
               <h3 className="mt-5 text-lg font-display text-navy-deep">{it.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function EmpresasResultados() {
+  const cards = [
+    {
+      icon: Laptop,
+      title: "Equipamentos Corporativos",
+      text: "Notebooks, computadores, monitores e soluções para ambientes profissionais.",
+    },
+    {
+      icon: Printer,
+      title: "Suprimentos para Impressão",
+      text: "Toners e cartuchos originais e compatíveis premium, com alto rendimento.",
+    },
+    {
+      icon: Headset,
+      title: "Atendimento Consultivo",
+      text: "Auxiliamos na escolha da melhor solução para cada necessidade do seu negócio.",
+    },
+    {
+      icon: BadgePercent,
+      title: "Condições Competitivas",
+      text: "Parcerias estratégicas que garantem excelente custo-benefício e previsibilidade.",
+    },
+  ];
+  return (
+    <section className="py-24 sm:py-32 bg-secondary">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <SectionHeader
+          eyebrow="Resultados que importam"
+          title="Empresas que buscam resultados escolhem a GV CONNECT"
+        />
+        <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
+          Oferecemos soluções tecnológicas completas para empresas que valorizam
+          desempenho, produtividade e atendimento especializado.
+        </p>
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {cards.map((c) => (
+            <div
+              key={c.title}
+              className="group relative p-7 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all duration-500"
+            >
+              <div className="h-12 w-12 rounded-xl bg-[image:var(--gradient-gold)] flex items-center justify-center shadow-gold ring-1 ring-gold/30 group-hover:scale-110 transition-transform">
+                <c.icon className="text-navy-deep" size={22} />
+              </div>
+              <h3 className="mt-5 text-lg font-display text-navy-deep">{c.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TecnologiaEmpresas({ openQuote }: { openQuote: OpenQuote }) {
+  const benefits = [
+    "Atendimento especializado",
+    "Equipamentos corporativos",
+    "Soluções sob medida",
+    "Suporte consultivo",
+    "Condições competitivas",
+    "Entrega rápida",
+  ];
+  return (
+    <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      <div className="absolute -top-32 left-1/4 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[140px]" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">Empresarial</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
+            Tecnologia para <span className="text-gold-gradient">Empresas</span>
+          </h2>
+          <p className="mt-6 text-platinum/80 text-lg leading-relaxed max-w-xl">
+            A GV CONNECT atende empresas de diferentes portes, oferecendo equipamentos,
+            suprimentos e soluções tecnológicas que contribuem para produtividade,
+            eficiência e crescimento.
+          </p>
+          <button
+            onClick={() => openQuote("generico")}
+            className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
+          >
+            Solicitar Cotação <ArrowRight size={16} />
+          </button>
+        </div>
+        <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+          {benefits.map((b) => (
+            <div
+              key={b}
+              className="flex items-center gap-3 p-5 rounded-xl border border-gold/20 bg-white/[0.04] backdrop-blur hover:border-gold/50 hover:bg-white/[0.07] transition"
+            >
+              <span className="h-9 w-9 rounded-full bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
+                <Check size={15} className="text-navy-deep" strokeWidth={3} />
+              </span>
+              <span className="text-sm text-platinum/90">{b}</span>
             </div>
           ))}
         </div>
@@ -228,40 +339,50 @@ export function Brands() {
 }
 
 export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
+  const credibility = [
+    { icon: Layers, label: "Soluções Tecnológicas", text: "Portfólio completo para diferentes demandas." },
+    { icon: Headset, label: "Atendimento Especializado", text: "Suporte consultivo do início à entrega." },
+    { icon: Award, label: "Marcas Reconhecidas", text: "Parcerias com os principais fabricantes." },
+    { icon: Users, label: "Clientes Atendidos", text: "Empresas e órgãos públicos em todo o Brasil." },
+  ];
   return (
     <section id="licitacoes" className="py-24 sm:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <Placeholder label="Imagem futura — Licitações" tall />
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-gold-deep">Setor Público</p>
+          <p className="text-xs uppercase tracking-[0.35em] text-gold-deep">Corporativo & Público</p>
           <h2 className="mt-3 text-4xl sm:text-5xl font-display text-navy-deep leading-tight">
-            Especialistas em <span className="text-gold-gradient">Licitações</span>
+            Fornecimento <span className="text-gold-gradient">Especializado</span>
           </h2>
-          <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-            A GV CONNECT atua no fornecimento de equipamentos, suprimentos e soluções tecnológicas
-            para empresas e órgãos públicos, atendendo processos licitatórios com agilidade,
-            responsabilidade e compromisso.
+          <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            Atendemos empresas e órgãos públicos com soluções completas em tecnologia,
+            suprimentos e equipamentos corporativos.
           </p>
-          <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-            {[
-              { n: "100%", l: "Documentação em dia" },
-              { n: "24h", l: "Resposta a editais" },
-              { n: "BR", l: "Cobertura nacional" },
-            ].map((s) => (
-              <div key={s.l} className="p-4 rounded-2xl border border-border bg-secondary">
-                <div className="text-2xl font-display text-gold-deep">{s.n}</div>
-                <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-1">{s.l}</div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Possuímos experiência em processos licitatórios e fornecimento especializado
+            para instituições que exigem qualidade, agilidade e confiança.
+          </p>
           <button
             onClick={() => openQuote("licitacao")}
             className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum bg-navy-deep hover:bg-navy transition shadow-elevated"
           >
             Solicitar Proposta <ArrowRight size={16} />
           </button>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {credibility.map((c) => (
+            <div
+              key={c.label}
+              className="group relative p-6 rounded-2xl border border-border bg-secondary hover:border-gold/60 hover:shadow-elevated transition-all"
+            >
+              <div className="h-11 w-11 rounded-xl bg-navy-deep flex items-center justify-center shadow-gold ring-1 ring-gold/30">
+                <c.icon className="text-gold" size={20} />
+              </div>
+              <h3 className="mt-4 text-sm uppercase tracking-[0.18em] text-navy-deep font-semibold">
+                {c.label}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -270,49 +391,61 @@ export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
 
 export function ValueList({ openQuote }: { openQuote: OpenQuote }) {
   const items = [
-    "Revenda Autorizada Lenovo",
-    "Grandes distribuidores parceiros",
-    "Atendimento especializado",
-    "Soluções corporativas completas",
-    "Atendimento para licitações",
-    "Produtos originais e compatíveis premium",
-    "Suporte consultivo",
-    "Entrega rápida e confiável",
-    "Atendimento personalizado",
-    "Compromisso com qualidade",
-    "Tecnologia ao seu alcance",
+    { icon: ShieldCheck, t: "Revenda Autorizada Lenovo" },
+    { icon: Handshake, t: "Grandes distribuidores parceiros" },
+    { icon: Headset, t: "Atendimento especializado" },
+    { icon: Truck, t: "Entrega rápida e confiável" },
+    { icon: Building2, t: "Soluções corporativas" },
+    { icon: Award, t: "Produtos originais e compatíveis premium" },
+    { icon: Gavel, t: "Atendimento para empresas e órgãos públicos" },
+    { icon: Check, t: "Compromisso com qualidade" },
+    { icon: Rocket, t: "Tecnologia ao seu alcance" },
   ];
   return (
     <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-30" />
       <div className="absolute -bottom-32 -right-20 h-[460px] w-[460px] rounded-full bg-gold/15 blur-[140px]" />
+      <div className="absolute -top-32 -left-20 h-[420px] w-[420px] rounded-full bg-navy-soft/40 blur-[120px]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">A GV Connect</p>
+          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">Diferenciais</p>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
-            Construída sobre <span className="text-gold-gradient">princípios sólidos</span>
+            Por que escolher a <span className="text-gold-gradient">GV CONNECT?</span>
           </h2>
+          <p className="mt-6 text-platinum/80 text-lg leading-relaxed">
+            Trabalhamos para oferecer muito mais do que produtos. Entregamos soluções
+            que ajudam empresas e instituições a alcançarem melhores resultados através
+            da tecnologia.
+          </p>
         </div>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((it) => (
             <div
-              key={it}
-              className="group flex items-center gap-3 p-4 rounded-xl border border-gold/15 bg-white/[0.03] backdrop-blur hover:border-gold/50 hover:bg-white/[0.06] transition"
+              key={it.t}
+              className="group flex items-center gap-4 p-5 rounded-xl border border-gold/15 bg-white/[0.04] backdrop-blur hover:border-gold/50 hover:bg-white/[0.07] transition"
             >
-              <span className="h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
-                <Check size={14} className="text-navy-deep" strokeWidth={3} />
+              <span className="h-10 w-10 rounded-xl bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
+                <it.icon size={18} className="text-navy-deep" />
               </span>
-              <span className="text-sm text-platinum/90">{it}</span>
+              <span className="text-sm text-platinum/90 font-medium">{it.t}</span>
             </div>
           ))}
         </div>
-        <div className="mt-12">
+        <div className="mt-12 flex flex-wrap gap-4">
           <button
             onClick={() => openQuote("generico")}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
           </button>
+          <a
+            href="https://wa.me/5544988480543"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors"
+          >
+            Falar com Especialista
+          </a>
         </div>
       </div>
     </section>
