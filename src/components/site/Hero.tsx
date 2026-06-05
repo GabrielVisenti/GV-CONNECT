@@ -190,11 +190,3 @@ function LogoStage() {
 }
 
 
-function Bracket({ className = "" }: { className?: string }) {
-  return (
-    <span
-      aria-hidden
-      className={`absolute h-6 w-6 border-t-2 border-l-2 border-gold/70 ${className}`}
-    />
-  );
-}
