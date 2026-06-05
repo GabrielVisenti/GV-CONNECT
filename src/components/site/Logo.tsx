@@ -1,17 +1,15 @@
-import logo from "@/assets/gv-connect-logo.png.asset.json";
+import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
-export function Logo({ className = "h-10 w-10", showText = true }: { className?: string; showText?: boolean }) {
+export function Logo({ className = "h-14 lg:h-16" }: { className?: string }) {
   return (
-    <a href="#top" className="flex items-center gap-3 group">
-      <div className={`relative ${className} rounded-lg overflow-hidden ring-1 ring-gold/40 shadow-gold transition-transform group-hover:scale-105`}>
-        <img src={logo.url} alt="GV Connect" className="h-full w-full object-cover" />
-      </div>
-      {showText && (
-        <div className="leading-none">
-          <div className="font-display text-lg tracking-wide text-gold-gradient">GV CONNECT</div>
-          <div className="text-[10px] uppercase tracking-[0.25em] text-platinum/60">Tecnologia Corporativa</div>
-        </div>
-      )}
+    <a href="#top" className="flex items-center group" aria-label="GV Connect">
+      <img
+        src={logo.url}
+        alt="GV Connect"
+        loading="eager"
+        decoding="async"
+        className={`${className} w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-[0_4px_20px_rgba(212,175,55,0.35)]`}
+      />
     </a>
   );
 }
