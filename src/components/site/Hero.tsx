@@ -24,7 +24,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
         <LogoStage />
 
         {/* Title */}
-        <h1 className="mt-6 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+        <h1 className="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
           <span className="text-shimmer">GV CONNECT</span>
         </h1>
 
@@ -39,7 +39,7 @@ export function Hero({ onQuote }: { onQuote: () => void }) {
 
 
         {/* CTAs */}
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onQuote}
             className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.04]"
@@ -138,7 +138,7 @@ function Particles() {
 
 function LogoStage() {
   return (
-    <div className="relative mt-12 flex items-center justify-center">
+    <div className="relative mt-14 flex items-center justify-center">
       {/* Concentric rotating rings */}
       <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] rounded-full border border-gold/15 animate-spin-slower" />
       <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-gold/20 animate-spin-slow" />
