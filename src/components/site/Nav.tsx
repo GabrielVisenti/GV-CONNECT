@@ -29,7 +29,7 @@ export function Nav({ onQuote }: { onQuote: () => void }) {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-24 flex items-center justify-between">
         <Logo />
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
