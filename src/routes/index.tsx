@@ -52,9 +52,11 @@ function Index() {
       <Nav onQuote={() => openQuote("generico")} />
       <Hero onQuote={() => openQuote("generico")} />
       <Differentials />
+      <EmpresasResultados />
       <LenovoSection openQuote={openQuote} />
       <Solutions openQuote={openQuote} />
       <Brands />
+      <TecnologiaEmpresas openQuote={openQuote} />
       <Licitacoes openQuote={openQuote} />
       <ValueList openQuote={openQuote} />
       <About />
