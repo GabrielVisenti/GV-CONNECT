@@ -212,18 +212,33 @@ export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
   );
 }
 
-function Placeholder({ label, tall }: { label: string; tall?: boolean }) {
+function LenovoImage({
+  src,
+  alt,
+  tall,
+  fit = "cover",
+  bg = "dark",
+}: {
+  src: string;
+  alt: string;
+  tall?: boolean;
+  fit?: "cover" | "contain";
+  bg?: "dark" | "light";
+}) {
   return (
     <div
-      className={`relative rounded-2xl border border-gold/30 bg-white/[0.04] backdrop-blur ${
-        tall ? "h-full min-h-[300px]" : "h-36"
-      } flex items-center justify-center overflow-hidden`}
+      className={`relative rounded-2xl border border-gold/30 ${
+        bg === "light" ? "bg-white" : "bg-white/[0.04] backdrop-blur"
+      } ${tall ? "h-full min-h-[300px]" : "h-36 sm:h-40"} overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.6)]`}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.78_0.13_82_/0.10),transparent_70%)]" />
-      <div className="absolute inset-3 border border-dashed border-gold/30 rounded-xl" />
-      <span className="relative text-[10px] uppercase tracking-[0.3em] text-gold-soft/80">
-        {label}
-      </span>
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className={`absolute inset-0 h-full w-full ${
+          fit === "contain" ? "object-contain p-3" : "object-cover"
+        }`}
+      />
     </div>
   );
 }
