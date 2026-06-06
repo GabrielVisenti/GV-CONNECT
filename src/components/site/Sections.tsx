@@ -333,7 +333,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                   <button
                     onClick={() => openQuote(s.key)}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
                   >
                     {s.cta}
                     <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
