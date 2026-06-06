@@ -286,7 +286,6 @@ const SOLUTIONS = [
     title: "Toners e Cartuchos",
     text: "Linha completa de suprimentos originais e compatíveis premium para praticamente todos os modelos do mercado.",
     cta: "Encontrar Meu Toner",
-    tags: ["Originais", "Compatíveis Premium", "Alto rendimento", "Pronta entrega"],
     image: catToners.url,
   },
   {
