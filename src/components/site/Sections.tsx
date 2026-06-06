@@ -286,7 +286,6 @@ const SOLUTIONS = [
     title: "Toners e Cartuchos",
     text: "Linha completa de suprimentos originais e compatíveis premium para praticamente todos os modelos do mercado.",
     cta: "Encontrar Meu Toner",
-    tags: ["Originais", "Compatíveis Premium", "Alto rendimento", "Pronta entrega"],
     image: catToners.url,
   },
   {
@@ -332,18 +331,9 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                 <div className="sm:col-span-3 p-7">
                   <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
-                  {s.tags && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {s.tags.map((t) => (
-                        <span key={t} className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider bg-navy-deep/5 text-navy-deep border border-navy-deep/10">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                   <button
                     onClick={() => openQuote(s.key)}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
                   >
                     {s.cta}
                     <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
