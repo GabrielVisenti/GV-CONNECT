@@ -266,6 +266,11 @@ function LenovoImage({
   );
 }
 
+import catInformatica from "@/assets/cat-informatica.png.asset.json";
+import catToners from "@/assets/cat-toners.png.asset.json";
+import catImpressao3d from "@/assets/cat-impressao3d.png.asset.json";
+import catManutencao from "@/assets/cat-manutencao.png.asset.json";
+
 const SOLUTIONS = [
   {
     key: "informatica" as QuoteType,
@@ -273,6 +278,7 @@ const SOLUTIONS = [
     title: "Equipamentos de Informática",
     text: "Notebooks, computadores, monitores, impressoras, periféricos e soluções completas para empresas e órgãos públicos.",
     cta: "Solicitar Cotação",
+    image: catInformatica.url,
   },
   {
     key: "toners" as QuoteType,
@@ -281,6 +287,7 @@ const SOLUTIONS = [
     text: "Linha completa de suprimentos originais e compatíveis premium para praticamente todos os modelos do mercado.",
     cta: "Encontrar Meu Toner",
     tags: ["Originais", "Compatíveis Premium", "Alto rendimento", "Pronta entrega"],
+    image: catToners.url,
   },
   {
     key: "impressao3d" as QuoteType,
@@ -288,6 +295,7 @@ const SOLUTIONS = [
     title: "Impressão 3D e Prototipagem",
     text: "Desenvolvimento de peças personalizadas, protótipos e soluções sob medida com tecnologia de impressão 3D.",
     cta: "Solicitar Projeto",
+    image: catImpressao3d.url,
   },
   {
     key: "manutencao" as QuoteType,
@@ -295,6 +303,7 @@ const SOLUTIONS = [
     title: "Manutenção Especializada",
     text: "Serviços preventivos e corretivos para computadores, notebooks, impressoras e equipamentos corporativos.",
     cta: "Solicitar Atendimento",
+    image: catManutencao.url,
   },
 ];
 
