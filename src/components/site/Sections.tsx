@@ -199,11 +199,34 @@ export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
         </div>
 
         <div className="lg:col-span-6">
-          <div className="grid grid-cols-2 gap-4">
-            <LenovoImage src={lenovoCertificate.url} alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect" tall fit="contain" bg="light" />
-            <div className="space-y-4">
-              <LenovoImage src={lenovoEmblem.url} alt="Selo Lenovo 360 Authorized 2026" fit="contain" bg="light" />
-              <LenovoImage src={gvLenovoPartnership.url} alt="Parceria GV CONNECT e Lenovo" fit="cover" />
+          <div className="space-y-4">
+            {/* Imagem principal — dominante */}
+            <div className="relative rounded-2xl border border-gold/30 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] aspect-[16/10]">
+              <img
+                src={gvLenovoPartnership.url}
+                alt="Parceria GV CONNECT e Lenovo"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Linha de credibilidade — selo + certificado */}
+            <div className="grid grid-cols-5 gap-4">
+              {/* Selo (2/5) — destaque de credibilidade */}
+              <div className="col-span-2 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
+                <img
+                  src={lenovoEmblem.url}
+                  alt="Selo Lenovo 360 Authorized 2026"
+                  className="max-h-full max-w-full object-contain p-3"
+                />
+              </div>
+              {/* Certificado (3/5) — elemento complementar */}
+              <div className="col-span-3 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
+                <img
+                  src={lenovoCertificate.url}
+                  alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect"
+                  className="max-h-full max-w-full object-contain p-3"
+                />
+              </div>
             </div>
           </div>
         </div>
