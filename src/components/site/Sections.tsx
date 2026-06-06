@@ -197,10 +197,10 @@ export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
 
         <div className="lg:col-span-6">
           <div className="grid grid-cols-2 gap-4">
-            <Placeholder label="Certificado Lenovo" tall />
+            <LenovoImage src={lenovoCertificate.url} alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect" tall fit="contain" bg="light" />
             <div className="space-y-4">
-              <Placeholder label="Selo Oficial" />
-              <Placeholder label="Imagem futura" />
+              <LenovoImage src={lenovoEmblem.url} alt="Selo Lenovo 360 Authorized 2026" fit="contain" bg="light" />
+              <LenovoImage src={gvLenovoPartnership.url} alt="Parceria GV CONNECT e Lenovo" fit="cover" />
             </div>
           </div>
         </div>
