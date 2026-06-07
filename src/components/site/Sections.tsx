@@ -318,15 +318,14 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
               className="group relative rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
               <div className="grid sm:grid-cols-5">
-                <div className="sm:col-span-2 relative bg-navy-gradient min-h-[180px] overflow-hidden">
-                  <div className="absolute inset-0 tech-grid opacity-30" />
+                <div className="sm:col-span-2 relative bg-white min-h-[180px] overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.title}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    decoding="async"
+                    fetchPriority="high"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 [image-rendering:auto]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
                 </div>
                 <div className="sm:col-span-3 p-7">
                   <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
