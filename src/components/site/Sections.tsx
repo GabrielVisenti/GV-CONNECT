@@ -317,8 +317,8 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
               key={s.title}
               className="group relative rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
-              <div className="grid sm:grid-cols-2 h-full">
-                <div className="relative bg-white min-h-[280px] sm:min-h-[320px] overflow-hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-12 h-full">
+                <div className="relative bg-white min-h-[200px] sm:min-h-[260px] sm:col-span-5 overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -327,12 +327,12 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 [image-rendering:auto]"
                   />
                 </div>
-                <div className="p-7 flex flex-col justify-center">
+                <div className="p-7 sm:col-span-7 flex flex-col justify-center">
                   <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                   <button
                     onClick={() => openQuote(s.key)}
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
                   >
                     {s.cta}
                     <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
