@@ -317,8 +317,8 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
               key={s.title}
               className="group relative rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
-              <div className="grid sm:grid-cols-5">
-                <div className="sm:col-span-2 relative bg-white min-h-[180px] overflow-hidden">
+              <div className="grid sm:grid-cols-2 h-full">
+                <div className="relative bg-white min-h-[280px] sm:min-h-[320px] overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -327,7 +327,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 [image-rendering:auto]"
                   />
                 </div>
-                <div className="sm:col-span-3 p-7">
+                <div className="p-7 flex flex-col justify-center">
                   <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                   <button
