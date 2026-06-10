@@ -311,13 +311,13 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
     <section id="solucoes" className="py-24 sm:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader eyebrow="Soluções" title="Tudo o que sua operação precisa, em um só parceiro" />
-        <div className="mt-14 mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        <div className="mt-14 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {SOLUTIONS.map((s) => (
             <article
               key={s.title}
               className="group relative flex flex-col rounded-2xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
-              <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
+              <div className="relative w-full aspect-[5/4] bg-white overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -326,16 +326,16 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   className="absolute inset-0 h-full w-full object-contain [image-rendering:auto]"
                 />
               </div>
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-base font-display text-navy-deep leading-snug">{s.title}</h3>
-                <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed">{s.text}</p>
+              <div className="p-6 lg:p-7 flex flex-col flex-1">
+                <h3 className="text-lg font-display text-navy-deep leading-snug">{s.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                 <button
                   onClick={() => openQuote(s.key)}
-                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-navy-deep group/btn self-start"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn self-start"
                 >
                   {s.cta}
-                  <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
-                    <ArrowRight size={12} />
+                  <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
+                    <ArrowRight size={14} />
                   </span>
                 </button>
               </div>
