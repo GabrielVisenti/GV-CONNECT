@@ -317,7 +317,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
               key={s.title}
               className="group relative flex flex-col rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
-              <div className="relative w-full aspect-square bg-white overflow-hidden">
+              <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -326,12 +326,12 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   className="absolute inset-0 h-full w-full object-contain [image-rendering:auto]"
                 />
               </div>
-              <div className="p-7 flex flex-col flex-1">
+              <div className="p-8 flex flex-col flex-1">
                 <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                 <button
                   onClick={() => openQuote(s.key)}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn self-start"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn self-start"
                 >
                   {s.cta}
                   <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
