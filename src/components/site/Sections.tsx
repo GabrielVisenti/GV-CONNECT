@@ -311,35 +311,33 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
     <section id="solucoes" className="py-24 sm:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader eyebrow="Soluções" title="Tudo o que sua operação precisa, em um só parceiro" />
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {SOLUTIONS.map((s) => (
             <article
               key={s.title}
-              className="group relative rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
+              className="group relative flex flex-col rounded-3xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-12 h-full">
-                <div className="relative bg-white min-h-[200px] sm:min-h-[260px] sm:col-span-5 overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    decoding="async"
-                    fetchPriority="high"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 [image-rendering:auto]"
-                  />
-                </div>
-                <div className="p-7 sm:col-span-7 flex flex-col justify-center">
-                  <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
-                  <button
-                    onClick={() => openQuote(s.key)}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn"
-                  >
-                    {s.cta}
-                    <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
-                      <ArrowRight size={14} />
-                    </span>
-                  </button>
-                </div>
+              <div className="relative w-full aspect-square bg-white overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  decoding="async"
+                  fetchPriority="high"
+                  className="absolute inset-0 h-full w-full object-contain [image-rendering:auto]"
+                />
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-xl font-display text-navy-deep">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+                <button
+                  onClick={() => openQuote(s.key)}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn self-start"
+                >
+                  {s.cta}
+                  <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
+                    <ArrowRight size={14} />
+                  </span>
+                </button>
               </div>
             </article>
           ))}
