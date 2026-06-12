@@ -315,15 +315,17 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
           {SOLUTIONS.map((s) => (
             <article
               key={s.title}
-              className="group relative flex flex-col rounded-2xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-all duration-500"
+              className="group relative flex flex-col rounded-2xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-[box-shadow,border-color] duration-500"
             >
-              <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
+              <div className="relative w-full aspect-[4/3] bg-white overflow-hidden isolate">
                 <img
                   src={s.image}
                   alt={s.title}
-                  decoding="async"
+                  decoding="sync"
                   fetchPriority="high"
-                  className="absolute inset-0 h-full w-full object-cover object-center [image-rendering:auto]"
+                  draggable={false}
+                  style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden" }}
+                  className="absolute inset-0 h-full w-full object-cover object-center select-none"
                 />
               </div>
               <div className="p-5 lg:p-6 flex flex-col flex-1">
