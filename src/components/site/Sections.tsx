@@ -22,7 +22,10 @@ import {
   Users,
   Zap,
   Rocket,
+  Expand,
+  X,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
 import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
@@ -307,6 +310,20 @@ const SOLUTIONS = [
 ];
 
 export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
+  const [preview, setPreview] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!preview) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setPreview(null);
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [preview]);
+
   return (
     <section id="solucoes" className="py-24 sm:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -317,7 +334,12 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
               key={s.title}
               className="group relative flex flex-col rounded-2xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-[box-shadow,border-color] duration-500"
             >
-              <div className="relative w-full aspect-[4/3] bg-white overflow-hidden isolate">
+              <button
+                type="button"
+                onClick={() => setPreview({ src: s.image, alt: s.title })}
+                aria-label={`Ampliar imagem de ${s.title}`}
+                className="relative w-full aspect-[4/3] bg-white overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              >
                 <img
                   src={s.image}
                   alt={s.title}
@@ -327,7 +349,10 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden" }}
                   className="absolute inset-0 h-full w-full object-cover object-center select-none"
                 />
-              </div>
+                <span className="absolute top-3 right-3 inline-flex items-center justify-center h-8 w-8 rounded-full bg-navy-deep/70 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Expand size={14} />
+                </span>
+              </button>
               <div className="p-5 lg:p-6 flex flex-col flex-1">
                 <h3 className="text-base lg:text-lg font-display text-navy-deep leading-snug">{s.title}</h3>
                 <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed flex-1">{s.text}</p>
@@ -345,6 +370,32 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
           ))}
         </div>
       </div>
+
+      {preview && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setPreview(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-200"
+        >
+          <button
+            type="button"
+            onClick={() => setPreview(null)}
+            aria-label="Fechar"
+            className="absolute top-5 right-5 inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+          >
+            <X size={20} />
+          </button>
+          <img
+            src={preview.src}
+            alt={preview.alt}
+            onClick={(e) => e.stopPropagation()}
+            draggable={false}
+            style={{ imageRendering: "auto" }}
+            className="max-h-[90vh] max-w-[92vw] object-contain rounded-xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)] animate-in zoom-in-95 duration-300"
+          />
+        </div>
+      )}
     </section>
   );
 }
