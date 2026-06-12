@@ -22,7 +22,10 @@ import {
   Users,
   Zap,
   Rocket,
+  Expand,
+  X,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
 import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
