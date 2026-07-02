@@ -271,39 +271,33 @@ function LenovoImage({
 
 import catInformatica from "@/assets/cat-informatica.png.asset.json";
 import catToners from "@/assets/cat-toners.png.asset.json";
-import catImpressao3d from "@/assets/cat-impressao3d.png.asset.json";
 import catManutencao from "@/assets/cat-manutencao.png.asset.json";
 
 const SOLUTIONS = [
   {
     key: "informatica" as QuoteType,
     icon: Monitor,
+    tag: "Hardware Corporativo",
     title: "Equipamentos de Informática",
-    text: "Notebooks, computadores, monitores, impressoras, periféricos e soluções completas para empresas e órgãos públicos.",
+    text: "Notebooks, desktops, monitores e periféricos para empresas e órgãos públicos.",
     cta: "Solicitar Cotação",
     image: catInformatica.url,
   },
   {
     key: "toners" as QuoteType,
     icon: Printer,
+    tag: "Suprimentos Premium",
     title: "Toners e Cartuchos",
-    text: "Linha completa de suprimentos originais e compatíveis premium para praticamente todos os modelos do mercado.",
+    text: "Linha completa de suprimentos originais e compatíveis premium para todos os modelos.",
     cta: "Encontrar Meu Toner",
     image: catToners.url,
   },
   {
-    key: "impressao3d" as QuoteType,
-    icon: Boxes,
-    title: "Impressão 3D e Prototipagem",
-    text: "Desenvolvimento de peças personalizadas, protótipos e soluções sob medida com tecnologia de impressão 3D.",
-    cta: "Solicitar Projeto",
-    image: catImpressao3d.url,
-  },
-  {
     key: "manutencao" as QuoteType,
     icon: Wrench,
+    tag: "Serviços Técnicos",
     title: "Manutenção Especializada",
-    text: "Serviços preventivos e corretivos para computadores, notebooks, impressoras e equipamentos corporativos.",
+    text: "Serviços preventivos e corretivos para computadores, notebooks e impressoras.",
     cta: "Solicitar Atendimento",
     image: catManutencao.url,
   },
@@ -325,49 +319,80 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
   }, [preview]);
 
   return (
-    <section id="solucoes" className="py-24 sm:py-32 bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="solucoes" className="relative py-24 sm:py-32 bg-gradient-to-b from-secondary via-white to-secondary overflow-hidden">
+      {/* Ambient background accents */}
+      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-gold/5 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-navy/5 blur-3xl" aria-hidden />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader eyebrow="Soluções" title="Tudo o que sua operação precisa, em um só parceiro" />
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7">
-          {SOLUTIONS.map((s) => (
-            <article
-              key={s.title}
-              className="group relative flex flex-col rounded-2xl bg-white border border-border overflow-hidden hover:shadow-elevated hover:border-gold/50 transition-[box-shadow,border-color] duration-500"
-            >
-              <button
-                type="button"
-                onClick={() => setPreview({ src: s.image, alt: s.title })}
-                aria-label={`Ampliar imagem de ${s.title}`}
-                className="relative w-full aspect-[4/3] bg-white overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {SOLUTIONS.map((s) => {
+            const Icon = s.icon;
+            return (
+              <article
+                key={s.title}
+                className="group relative flex flex-col rounded-3xl bg-white border border-border/70 overflow-hidden shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.08)] hover:shadow-elevated hover:-translate-y-1 hover:border-gold/60 transition-[transform,box-shadow,border-color] duration-500"
               >
-                <img
-                  src={s.image}
-                  alt={s.title}
-                  decoding="sync"
-                  fetchPriority="high"
-                  draggable={false}
-                  style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden" }}
-                  className="absolute inset-0 h-full w-full object-cover object-center select-none"
-                />
-                <span className="absolute top-3 right-3 inline-flex items-center justify-center h-8 w-8 rounded-full bg-navy-deep/70 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Expand size={14} />
-                </span>
-              </button>
-              <div className="p-5 lg:p-6 flex flex-col flex-1">
-                <h3 className="text-base lg:text-lg font-display text-navy-deep leading-snug">{s.title}</h3>
-                <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed flex-1">{s.text}</p>
+                {/* Image showcase */}
                 <button
-                  onClick={() => openQuote(s.key)}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/btn self-start"
+                  type="button"
+                  onClick={() => setPreview({ src: s.image, alt: s.title })}
+                  aria-label={`Ampliar imagem de ${s.title}`}
+                  className="relative w-full aspect-[5/4] bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  {s.cta}
-                  <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform group-hover/btn:translate-x-1">
-                    <ArrowRight size={12} />
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    decoding="sync"
+                    fetchPriority="high"
+                    draggable={false}
+                    style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden" }}
+                    className="absolute inset-0 h-full w-full object-cover object-center select-none"
+                  />
+                  {/* Subtle gradient sweep on hover */}
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
+                  {/* Category tag */}
+                  <span className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-white text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-deep shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                    {s.tag}
+                  </span>
+                  {/* Zoom affordance */}
+                  <span className="absolute top-4 right-4 inline-flex items-center justify-center h-9 w-9 rounded-full bg-navy-deep/80 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Expand size={15} />
                   </span>
                 </button>
-              </div>
-            </article>
-          ))}
+
+                {/* Content */}
+                <div className="relative flex flex-col flex-1 p-7 lg:p-8">
+                  {/* Floating icon medallion */}
+                  <span className="absolute -top-7 right-7 inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold ring-4 ring-white">
+                    <Icon size={22} strokeWidth={1.75} />
+                  </span>
+
+                  <h3 className="pr-16 text-xl lg:text-[22px] font-display text-navy-deep leading-tight tracking-tight">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
+                    {s.text}
+                  </p>
+
+                  <div className="mt-7 pt-5 border-t border-border/70">
+                    <button
+                      onClick={() => openQuote(s.key)}
+                      className="inline-flex items-center gap-3 text-sm font-semibold text-navy-deep hover:text-gold-deep transition-colors group/btn"
+                    >
+                      {s.cta}
+                      <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[image:var(--gradient-gold)] text-navy-deep shadow-gold transition-transform duration-300 group-hover/btn:translate-x-1">
+                        <ArrowRight size={13} />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
 
@@ -399,6 +424,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
     </section>
   );
 }
+
 
 const BRANDS = ["Lenovo", "HP", "Dell", "Samsung", "Brother", "Epson", "Canon", "Microsoft", "Logitech", "Intel", "AMD", "Asus"];
 
