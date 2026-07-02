@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "1bbbe4ee-5dbd-4dd2-8280-c20280c7a8ba",
+  "asset_id": "2c0bb1d5-fa8f-472f-b179-acfbaaa925a7",
   "project_id": "7c6bb951-efb3-421d-855f-e127c3b9cfc1",
-  "url": "/__l5e/assets-v1/1bbbe4ee-5dbd-4dd2-8280-c20280c7a8ba/cat-manutencao.jpg",
-  "r2_key": "a/v1/7c6bb951-efb3-421d-855f-e127c3b9cfc1/1bbbe4ee-5dbd-4dd2-8280-c20280c7a8ba/cat-manutencao.jpg",
-  "original_filename": "cat-manutencao.jpg",
-  "size": 32477,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-12T15:12:13Z"
+  "url": "/__l5e/assets-v1/2c0bb1d5-fa8f-472f-b179-acfbaaa925a7/cat-manutencao.png",
+  "r2_key": "a/v1/7c6bb951-efb3-421d-855f-e127c3b9cfc1/2c0bb1d5-fa8f-472f-b179-acfbaaa925a7/cat-manutencao.png",
+  "original_filename": "cat-manutencao.png",
+  "size": 2039247,
+  "content_type": "image/png",
+  "created_at": "2026-07-02T02:14:48Z"
 }
