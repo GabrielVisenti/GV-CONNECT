@@ -324,10 +324,10 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
       <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-gold/5 blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-navy/5 blur-3xl" aria-hidden />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <SectionHeader eyebrow="Soluções" title="Tudo o que sua operação precisa, em um só parceiro" />
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {SOLUTIONS.map((s) => {
             const Icon = s.icon;
             return (
@@ -340,7 +340,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   type="button"
                   onClick={() => setPreview({ src: s.image, alt: s.title })}
                   aria-label={`Ampliar imagem de ${s.title}`}
-                  className="relative w-full aspect-[5/4] bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="relative w-full aspect-[4/3] bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <img
                     src={s.image}
@@ -348,16 +348,11 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     decoding="sync"
                     fetchPriority="high"
                     draggable={false}
-                    style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden" }}
-                    className="absolute inset-0 h-full w-full object-cover object-center select-none"
+                    style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden", objectPosition: s.objectPosition }}
+                    className="absolute inset-0 h-full w-full object-cover select-none"
                   />
                   {/* Subtle gradient sweep on hover */}
                   <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
-                  {/* Category tag */}
-                  <span className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-white text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-deep shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                    {s.tag}
-                  </span>
                   {/* Zoom affordance */}
                   <span className="absolute top-4 right-4 inline-flex items-center justify-center h-9 w-9 rounded-full bg-navy-deep/80 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Expand size={15} />
