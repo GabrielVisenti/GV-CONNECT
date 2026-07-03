@@ -340,7 +340,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   type="button"
                   onClick={() => setPreview({ src: s.image, alt: s.title })}
                   aria-label={`Ampliar imagem de ${s.title}`}
-                  className="relative w-full aspect-[4/3] bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <img
                     src={s.image}
@@ -349,7 +349,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     fetchPriority="high"
                     draggable={false}
                     style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden", objectPosition: s.objectPosition }}
-                    className="absolute inset-0 h-full w-full object-cover select-none"
+                    className="absolute inset-0 h-full w-full object-contain select-none p-2"
                   />
                   {/* Subtle gradient sweep on hover */}
                   <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
