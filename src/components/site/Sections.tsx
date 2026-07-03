@@ -277,29 +277,29 @@ const SOLUTIONS = [
   {
     key: "informatica" as QuoteType,
     icon: Monitor,
-    tag: "Hardware Corporativo",
     title: "Equipamentos de Informática",
     text: "Notebooks, desktops, monitores e periféricos para empresas e órgãos públicos.",
     cta: "Solicitar Cotação",
     image: catInformatica.url,
+    objectPosition: "center" as const,
   },
   {
     key: "toners" as QuoteType,
     icon: Printer,
-    tag: "Suprimentos Premium",
     title: "Toners e Cartuchos",
     text: "Linha completa de suprimentos originais e compatíveis premium para todos os modelos.",
     cta: "Encontrar Meu Toner",
     image: catToners.url,
+    objectPosition: "top center" as const,
   },
   {
     key: "manutencao" as QuoteType,
     icon: Wrench,
-    tag: "Serviços Técnicos",
     title: "Manutenção Especializada",
     text: "Serviços preventivos e corretivos para computadores, notebooks e impressoras.",
     cta: "Solicitar Atendimento",
     image: catManutencao.url,
+    objectPosition: "center 30%" as const,
   },
 ];
 
