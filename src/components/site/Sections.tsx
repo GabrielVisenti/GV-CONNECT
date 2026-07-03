@@ -583,22 +583,16 @@ export function About() {
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              A GV CONNECT nasceu em 2025 com a missão de fornecer soluções tecnológicas completas
-              para empresas e órgãos públicos.
+              A GV CONNECT nasceu em 2025 com o propósito de oferecer soluções em tecnologia com qualidade, agilidade e confiança para empresas e órgãos públicos.
             </p>
             <p>
-              Desde o início buscamos construir parcerias sólidas com grandes distribuidores do
-              mercado, garantindo acesso aos melhores equipamentos, suprimentos e soluções
-              tecnológicas disponíveis.
+              Desde o início, buscamos construir parcerias sólidas com os principais distribuidores do mercado, garantindo acesso aos melhores equipamentos, suprimentos e soluções tecnológicas para atender às mais diversas necessidades dos nossos clientes.
             </p>
             <p>
-              Hoje atuamos no fornecimento de equipamentos de informática, toners e cartuchos,
-              manutenção especializada, impressão 3D e atendimento voltado ao mercado corporativo e
-              licitações públicas.
+              Atuamos na comercialização de equipamentos de informática, toners e cartuchos originais e compatíveis, além de oferecer serviços de manutenção especializada e atendimento voltado ao mercado corporativo e às licitações públicas.
             </p>
             <p className="text-navy-deep font-medium">
-              Nosso compromisso é conectar pessoas e organizações às melhores soluções tecnológicas
-              com rapidez, confiança e excelência.
+              Nosso compromisso é conectar empresas e organizações às melhores soluções tecnológicas, sempre com excelência no atendimento, rapidez na entrega e compromisso com a qualidade.
             </p>
           </div>
         </div>
