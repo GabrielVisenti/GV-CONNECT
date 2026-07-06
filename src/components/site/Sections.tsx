@@ -571,10 +571,14 @@ export function About() {
     <section id="sobre" className="py-24 sm:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
-          <div className="relative rounded-2xl border border-gold/30 bg-white/[0.04] backdrop-blur h-full min-h-[300px] flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.78_0.13_82_/0.10),transparent_70%)]" />
-            <div className="absolute inset-3 border border-dashed border-gold/30 rounded-xl" />
-            <span className="relative text-[10px] uppercase tracking-[0.3em] text-gold-soft/80">Imagem futura — Sobre</span>
+          <div className="relative rounded-2xl border border-gold/30 overflow-hidden h-full min-h-[300px]">
+            <img
+              src={nossaHistoria.url}
+              alt="GV Connect — Nossa história"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{ imageRendering: "auto" }}
+              loading="lazy"
+            />
           </div>
         </div>
         <div className="lg:col-span-7">
