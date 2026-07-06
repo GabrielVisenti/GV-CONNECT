@@ -341,7 +341,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   type="button"
                   onClick={() => setPreview({ src: s.image, alt: s.title })}
                   aria-label={`Ampliar imagem de ${s.title}`}
-                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="relative w-full aspect-square rounded-t-3xl bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <img
                     src={s.image}
