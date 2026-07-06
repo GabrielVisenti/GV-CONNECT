@@ -31,6 +31,7 @@ import { Logo } from "./Logo";
 import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
 import lenovoEmblem from "@/assets/lenovo-emblem.png.asset.json";
 import gvLenovoPartnership from "@/assets/gv-lenovo-partnership.png.asset.json";
+import nossaHistoria from "@/assets/nossa-historia.png.asset.json";
 
 type OpenQuote = (t: QuoteType) => void;
 
