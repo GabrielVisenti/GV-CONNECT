@@ -571,18 +571,18 @@ export function About() {
   return (
     <section id="sobre" className="py-24 sm:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-5">
-          <div className="relative rounded-2xl border border-gold/30 overflow-hidden h-full min-h-[300px]">
+        <div className="lg:col-span-6 flex justify-center">
+          <div className="relative w-full max-w-xl rounded-2xl border border-gold/30 overflow-hidden shadow-elevated bg-white min-h-[380px] sm:min-h-[420px] lg:aspect-[4/3] lg:min-h-[520px]">
             <img
               src={nossaHistoria.url}
               alt="GV Connect — Nossa história"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-contain object-center p-2 sm:p-3 lg:p-4"
               style={{ imageRendering: "auto" }}
               loading="lazy"
             />
           </div>
         </div>
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <p className="text-xs uppercase tracking-[0.35em] text-gold-deep">Sobre Nós</p>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl text-navy-deep leading-tight">
             Tecnologia com <span className="text-gold-gradient">propósito</span> desde 2025
