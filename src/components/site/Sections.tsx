@@ -479,12 +479,14 @@ export function Licitacoes() {
             Possuímos experiência em processos licitatórios e fornecimento especializado
             para instituições que exigem qualidade, agilidade e confiança.
           </p>
-          <button
-            onClick={() => openQuote("licitacao")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum bg-navy-deep hover:bg-navy transition shadow-elevated"
           >
             Solicitar Proposta <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {credibility.map((c) => (
