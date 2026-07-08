@@ -143,12 +143,14 @@ export function TecnologiaEmpresas() {
             suprimentos e soluções tecnológicas que contribuem para produtividade,
             eficiência e crescimento.
           </p>
-          <button
-            onClick={() => openQuote("generico")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
         <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
