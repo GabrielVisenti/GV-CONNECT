@@ -509,7 +509,7 @@ export function Licitacoes() {
   );
 }
 
-export function ValueList({ openQuote }: { openQuote: OpenQuote }) {
+export function ValueList() {
   const items = [
     { icon: ShieldCheck, t: "Revenda Autorizada Lenovo" },
     { icon: Handshake, t: "Grandes distribuidores parceiros" },
