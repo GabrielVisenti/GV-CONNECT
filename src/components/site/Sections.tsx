@@ -242,36 +242,6 @@ export function LenovoSection() {
   );
 }
 
-function LenovoImage({
-  src,
-  alt,
-  tall,
-  fit = "cover",
-  bg = "dark",
-}: {
-  src: string;
-  alt: string;
-  tall?: boolean;
-  fit?: "cover" | "contain";
-  bg?: "dark" | "light";
-}) {
-  return (
-    <div
-      className={`relative rounded-2xl border border-gold/30 ${
-        bg === "light" ? "bg-white" : "bg-white/[0.04] backdrop-blur"
-      } ${tall ? "h-full min-h-[300px]" : "h-36 sm:h-40"} overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.6)]`}
-    >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className={`absolute inset-0 h-full w-full ${
-          fit === "contain" ? "object-contain p-3" : "object-cover"
-        }`}
-      />
-    </div>
-  );
-}
 
 import catInformatica from "@/assets/cat-informatica.png.asset.json";
 import catToners from "@/assets/cat-toners.png.asset.json";
