@@ -119,7 +119,7 @@ export function EmpresasResultados() {
   );
 }
 
-export function TecnologiaEmpresas({ openQuote }: { openQuote: OpenQuote }) {
+export function TecnologiaEmpresas() {
   const benefits = [
     "Atendimento especializado",
     "Equipamentos corporativos",
