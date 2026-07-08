@@ -170,7 +170,7 @@ export function TecnologiaEmpresas() {
   );
 }
 
-export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
+export function LenovoSection() {
   return (
     <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-40" />
