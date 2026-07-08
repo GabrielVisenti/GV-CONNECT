@@ -5,14 +5,12 @@ import {
   ShieldCheck,
   Monitor,
   Printer,
-  Boxes,
   Wrench,
   Check,
   ArrowRight,
   Mail,
   MapPin,
   Phone,
-  Instagram,
   Laptop,
   Headset,
   BadgePercent,
@@ -20,7 +18,6 @@ import {
   Layers,
   Award,
   Users,
-  Zap,
   Rocket,
   Expand,
   X,
@@ -28,12 +25,14 @@ import {
 import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
+import { WHATSAPP_HREF } from "./WhatsAppFab";
 import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
 import lenovoEmblem from "@/assets/lenovo-emblem.png.asset.json";
 import gvLenovoPartnership from "@/assets/gv-lenovo-partnership.png.asset.json";
 import nossaHistoria from "@/assets/nossa-historia.png.asset.json";
 
 type OpenQuote = (t: QuoteType) => void;
+
 
 export function Differentials() {
   const items = [
