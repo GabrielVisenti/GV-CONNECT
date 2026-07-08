@@ -195,12 +195,14 @@ export function LenovoSection() {
               </li>
             ))}
           </ul>
-          <button
-            onClick={() => openQuote("lenovo")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-3 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação Lenovo <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         <div className="lg:col-span-6">
