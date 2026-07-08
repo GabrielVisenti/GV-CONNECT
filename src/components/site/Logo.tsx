@@ -1,6 +1,6 @@
 import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
 
-export function Logo({ className = "h-14 lg:h-16" }: { className?: string }) {
+export function Logo({ className = "h-16 lg:h-20" }: { className?: string }) {
   return (
     <a href="#top" className="flex items-center group" aria-label="GV Connect">
       <img

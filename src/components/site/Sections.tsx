@@ -5,14 +5,12 @@ import {
   ShieldCheck,
   Monitor,
   Printer,
-  Boxes,
   Wrench,
   Check,
   ArrowRight,
   Mail,
   MapPin,
   Phone,
-  Instagram,
   Laptop,
   Headset,
   BadgePercent,
@@ -20,7 +18,6 @@ import {
   Layers,
   Award,
   Users,
-  Zap,
   Rocket,
   Expand,
   X,
@@ -28,12 +25,14 @@ import {
 import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
+import { WHATSAPP_HREF } from "./WhatsAppFab";
 import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
 import lenovoEmblem from "@/assets/lenovo-emblem.png.asset.json";
 import gvLenovoPartnership from "@/assets/gv-lenovo-partnership.png.asset.json";
 import nossaHistoria from "@/assets/nossa-historia.png.asset.json";
 
 type OpenQuote = (t: QuoteType) => void;
+
 
 export function Differentials() {
   const items = [
@@ -120,7 +119,7 @@ export function EmpresasResultados() {
   );
 }
 
-export function TecnologiaEmpresas({ openQuote }: { openQuote: OpenQuote }) {
+export function TecnologiaEmpresas() {
   const benefits = [
     "Atendimento especializado",
     "Equipamentos corporativos",
@@ -144,12 +143,14 @@ export function TecnologiaEmpresas({ openQuote }: { openQuote: OpenQuote }) {
             suprimentos e soluções tecnológicas que contribuem para produtividade,
             eficiência e crescimento.
           </p>
-          <button
-            onClick={() => openQuote("generico")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
         <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
           {benefits.map((b) => (
@@ -169,7 +170,7 @@ export function TecnologiaEmpresas({ openQuote }: { openQuote: OpenQuote }) {
   );
 }
 
-export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
+export function LenovoSection() {
   return (
     <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-40" />
@@ -194,12 +195,14 @@ export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
               </li>
             ))}
           </ul>
-          <button
-            onClick={() => openQuote("lenovo")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-3 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação Lenovo <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         <div className="lg:col-span-6">
@@ -239,36 +242,6 @@ export function LenovoSection({ openQuote }: { openQuote: OpenQuote }) {
   );
 }
 
-function LenovoImage({
-  src,
-  alt,
-  tall,
-  fit = "cover",
-  bg = "dark",
-}: {
-  src: string;
-  alt: string;
-  tall?: boolean;
-  fit?: "cover" | "contain";
-  bg?: "dark" | "light";
-}) {
-  return (
-    <div
-      className={`relative rounded-2xl border border-gold/30 ${
-        bg === "light" ? "bg-white" : "bg-white/[0.04] backdrop-blur"
-      } ${tall ? "h-full min-h-[300px]" : "h-36 sm:h-40"} overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.6)]`}
-    >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className={`absolute inset-0 h-full w-full ${
-          fit === "contain" ? "object-contain p-3" : "object-cover"
-        }`}
-      />
-    </div>
-  );
-}
 
 import catInformatica from "@/assets/cat-informatica.png.asset.json";
 import catToners from "@/assets/cat-toners.png.asset.json";
@@ -453,7 +426,7 @@ export function Brands() {
   );
 }
 
-export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
+export function Licitacoes() {
   const credibility = [
     { icon: Layers, label: "Soluções Tecnológicas", text: "Portfólio completo para diferentes demandas." },
     { icon: Headset, label: "Atendimento Especializado", text: "Suporte consultivo do início à entrega." },
@@ -476,12 +449,14 @@ export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
             Possuímos experiência em processos licitatórios e fornecimento especializado
             para instituições que exigem qualidade, agilidade e confiança.
           </p>
-          <button
-            onClick={() => openQuote("licitacao")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum bg-navy-deep hover:bg-navy transition shadow-elevated"
           >
             Solicitar Proposta <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {credibility.map((c) => (
@@ -504,7 +479,7 @@ export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
   );
 }
 
-export function ValueList({ openQuote }: { openQuote: OpenQuote }) {
+export function ValueList() {
   const items = [
     { icon: ShieldCheck, t: "Revenda Autorizada Lenovo" },
     { icon: Handshake, t: "Grandes distribuidores parceiros" },
@@ -547,14 +522,16 @@ export function ValueList({ openQuote }: { openQuote: OpenQuote }) {
           ))}
         </div>
         <div className="mt-12 flex flex-wrap gap-4">
-          <button
-            onClick={() => openQuote("generico")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
-          </button>
+          </a>
           <a
-            href="https://wa.me/5544988480543"
+            href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors"
@@ -607,7 +584,7 @@ export function About() {
   );
 }
 
-export function Footer({ openQuote }: { openQuote: OpenQuote }) {
+export function Footer() {
   return (
     <footer id="contato" className="relative bg-navy-deep text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-25" />
@@ -619,21 +596,38 @@ export function Footer({ openQuote }: { openQuote: OpenQuote }) {
           <p className="mt-2 text-sm uppercase tracking-[0.25em] text-gold-soft/80">
             Conectamos você ao que realmente importa.
           </p>
-          <button
-            onClick={() => openQuote("generico")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-7 inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         <div className="lg:col-span-3">
           <h4 className="text-xs uppercase tracking-[0.3em] text-gold-soft">Contato</h4>
           <ul className="mt-5 space-y-3 text-sm text-platinum/80">
-            <li className="flex items-center gap-3"><Phone size={14} className="text-gold" /> (44) 98848-0543</li>
-            <li className="flex items-center gap-3"><Mail size={14} className="text-gold" /> glconnect@gmail.com</li>
-            <li className="flex items-center gap-3"><MapPin size={14} className="text-gold" /> São Jorge do Ivaí — PR</li>
-            <li className="flex items-center gap-3"><Instagram size={14} className="text-gold" /> GV CONNECT</li>
+            <li>
+              <a
+                href="tel:+5544988480543"
+                className="flex items-center gap-3 hover:text-gold transition-colors"
+              >
+                <Phone size={14} className="text-gold" /> (44) 98848-0543
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:glconnect@gmail.com"
+                className="flex items-center gap-3 hover:text-gold transition-colors"
+              >
+                <Mail size={14} className="text-gold" /> glconnect@gmail.com
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <MapPin size={14} className="text-gold" /> São Jorge do Ivaí — PR
+            </li>
           </ul>
         </div>
 
@@ -652,13 +646,19 @@ export function Footer({ openQuote }: { openQuote: OpenQuote }) {
               </li>
             ))}
             <li>
-              <button onClick={() => openQuote("generico")} className="text-gold hover:underline">
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:underline"
+              >
                 Solicitar Cotação
-              </button>
+              </a>
             </li>
           </ul>
         </div>
       </div>
+
 
       <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-platinum/50">

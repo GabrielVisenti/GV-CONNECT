@@ -141,7 +141,7 @@ export function QuoteModal({
 
               {(type === "informatica" || type === "lenovo") && (
                 <>
-                  <Input label="Marca e Modelo" value={form.marcaModelo || ""} onChange={(v) => update("marcaModelo", v)} required />
+                  <Input label="Qual equipamento você precisa?" value={form.marcaModelo || ""} onChange={(v) => update("marcaModelo", v)} required />
                   <Input label="Quantidade" value={form.quantidade || ""} onChange={(v) => update("quantidade", v)} required />
                 </>
               )}

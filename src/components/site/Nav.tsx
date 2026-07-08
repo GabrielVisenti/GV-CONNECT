@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MSG } from "./WhatsAppFab";
 
 const links = [
   { href: "#top", label: "Início" },
@@ -10,7 +11,9 @@ const links = [
   { href: "#contato", label: "Contato" },
 ];
 
-export function Nav({ onQuote }: { onQuote: () => void }) {
+const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MSG)}`;
+
+export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -29,7 +32,7 @@ export function Nav({ onQuote }: { onQuote: () => void }) {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-24 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-28 flex items-center justify-between">
         <Logo />
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
@@ -43,13 +46,15 @@ export function Nav({ onQuote }: { onQuote: () => void }) {
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-3">
-          <button
-            onClick={onQuote}
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold transition-transform hover:scale-[1.03] active:scale-100"
           >
             Solicitar Cotação
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-navy-deep animate-glow" />
-          </button>
+          </a>
         </div>
         <button
           onClick={() => setOpen((v) => !v)}
@@ -77,15 +82,15 @@ export function Nav({ onQuote }: { onQuote: () => void }) {
               {l.label}
             </a>
           ))}
-          <button
-            onClick={() => {
-              setOpen(false);
-              onQuote();
-            }}
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)]"
           >
             Solicitar Cotação
-          </button>
+          </a>
         </div>
       </div>
     </header>

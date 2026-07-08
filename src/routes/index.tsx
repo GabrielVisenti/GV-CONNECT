@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { lazy, Suspense, useCallback, useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { QuoteModal, type QuoteType } from "@/components/site/QuoteModal";
+import type { QuoteType } from "@/components/site/QuoteModal";
 import {
   Differentials,
   EmpresasResultados,
@@ -16,6 +16,10 @@ import {
   About,
   Footer,
 } from "@/components/site/Sections";
+
+const QuoteModal = lazy(() =>
+  import("@/components/site/QuoteModal").then((m) => ({ default: m.QuoteModal })),
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,27 +46,33 @@ function Index() {
   const [open, setOpen] = useState(false);
   const [type, setType] = useState<QuoteType>("generico");
 
-  const openQuote = (t: QuoteType = "generico") => {
+  const openQuote = useCallback((t: QuoteType) => {
     setType(t);
     setOpen(true);
-  };
+  }, []);
+
+  const closeQuote = useCallback(() => setOpen(false), []);
 
   return (
     <main className="min-h-screen bg-background">
-      <Nav onQuote={() => openQuote("generico")} />
-      <Hero onQuote={() => openQuote("generico")} />
+      <Nav />
+      <Hero />
       <Differentials />
       <EmpresasResultados />
-      <LenovoSection openQuote={openQuote} />
+      <LenovoSection />
       <Solutions openQuote={openQuote} />
       <Brands />
-      <TecnologiaEmpresas openQuote={openQuote} />
-      <Licitacoes openQuote={openQuote} />
-      <ValueList openQuote={openQuote} />
+      <TecnologiaEmpresas />
+      <Licitacoes />
+      <ValueList />
       <About />
-      <Footer openQuote={openQuote} />
+      <Footer />
       <WhatsAppFab />
-      <QuoteModal open={open} onClose={() => setOpen(false)} type={type} />
+      {open && (
+        <Suspense fallback={null}>
+          <QuoteModal open={open} onClose={closeQuote} type={type} />
+        </Suspense>
+      )}
     </main>
   );
 }
