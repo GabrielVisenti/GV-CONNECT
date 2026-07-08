@@ -456,7 +456,7 @@ export function Brands() {
   );
 }
 
-export function Licitacoes({ openQuote }: { openQuote: OpenQuote }) {
+export function Licitacoes() {
   const credibility = [
     { icon: Layers, label: "Soluções Tecnológicas", text: "Portfólio completo para diferentes demandas." },
     { icon: Headset, label: "Atendimento Especializado", text: "Suporte consultivo do início à entrega." },
