@@ -552,14 +552,16 @@ export function ValueList() {
           ))}
         </div>
         <div className="mt-12 flex flex-wrap gap-4">
-          <button
-            onClick={() => openQuote("generico")}
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
           >
             Solicitar Cotação <ArrowRight size={16} />
-          </button>
+          </a>
           <a
-            href="https://wa.me/5544988480543"
+            href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors"
