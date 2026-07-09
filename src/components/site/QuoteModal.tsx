@@ -26,7 +26,7 @@ const SUBMIT_LABEL: Record<QuoteType, string> = {
 
 type Form = {
   quem: string;
-  marcaModelo?: string;
+  produto?: string;
   quantidade?: string;
   tipo?: string;
   modelo?: string;
@@ -48,7 +48,7 @@ export function QuoteModal({
   type: QuoteType;
 }) {
   const [form, setForm] = useState<Form>({
-    quem: "Empresa",
+    quem: "Pessoa Física",
     nome: "",
     cidade: "",
     telefone: "",
@@ -76,7 +76,7 @@ export function QuoteModal({
     const lines = [
       `*Nova solicitação — ${TITLES[type]}*`,
       `Solicitante: ${form.quem}`,
-      form.marcaModelo && `Marca e Modelo: ${form.marcaModelo}`,
+      form.produto && `Produto: ${form.produto}`,
       form.tipo && `Tipo: ${form.tipo}`,
       form.modelo && `Modelo: ${form.modelo}`,
       form.quantidade && `Quantidade: ${form.quantidade}`,
@@ -121,8 +121,8 @@ export function QuoteModal({
 
             <div className="mt-6 space-y-5">
               <Field label="Quem está solicitando?">
-                <div className="grid grid-cols-3 gap-2">
-                  {["Pessoa Física", "Empresa", "Órgão Público"].map((o) => (
+                <div className="grid grid-cols-2 gap-2">
+                  {["Pessoa Física", "Órgão Público"].map((o) => (
                     <button
                       type="button"
                       key={o}
@@ -141,7 +141,7 @@ export function QuoteModal({
 
               {(type === "informatica" || type === "lenovo") && (
                 <>
-                  <Input label="Qual equipamento você precisa?" value={form.marcaModelo || ""} onChange={(v) => update("marcaModelo", v)} required />
+                  <Input label="Produto" value={form.produto || ""} onChange={(v) => update("produto", v)} required />
                   <Input label="Quantidade" value={form.quantidade || ""} onChange={(v) => update("quantidade", v)} required />
                 </>
               )}

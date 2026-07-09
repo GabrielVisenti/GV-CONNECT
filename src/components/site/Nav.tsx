@@ -32,7 +32,7 @@ export function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-28 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-32 flex items-center justify-between">
         <Logo />
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
