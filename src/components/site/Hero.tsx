@@ -131,9 +131,9 @@ function LogoStage() {
         <span className="absolute left-1/2 bottom-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold shadow-gold" />
       </div>
 
-      <div className="absolute h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] rounded-full bg-gold/25 blur-3xl animate-glow" />
+      <div className="absolute h-[260px] w-[260px] sm:h-[340px] sm:w-[340px] rounded-full bg-gold/25 blur-3xl animate-glow" />
 
-      <div className="relative h-48 w-48 sm:h-60 sm:w-60 flex items-center justify-center animate-float">
+      <div className="relative h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 flex items-center justify-center animate-float">
         <img
           src={logo.url}
           alt="GV Connect"
