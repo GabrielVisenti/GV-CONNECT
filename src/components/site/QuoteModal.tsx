@@ -48,7 +48,7 @@ export function QuoteModal({
   type: QuoteType;
 }) {
   const [form, setForm] = useState<Form>({
-    quem: "Empresa",
+    quem: "Pessoa Física",
     nome: "",
     cidade: "",
     telefone: "",
