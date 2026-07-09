@@ -26,7 +26,7 @@ const SUBMIT_LABEL: Record<QuoteType, string> = {
 
 type Form = {
   quem: string;
-  marcaModelo?: string;
+  produto?: string;
   quantidade?: string;
   tipo?: string;
   modelo?: string;
