@@ -76,7 +76,7 @@ export function QuoteModal({
     const lines = [
       `*Nova solicitação — ${TITLES[type]}*`,
       `Solicitante: ${form.quem}`,
-      form.marcaModelo && `Marca e Modelo: ${form.marcaModelo}`,
+      form.produto && `Produto: ${form.produto}`,
       form.tipo && `Tipo: ${form.tipo}`,
       form.modelo && `Modelo: ${form.modelo}`,
       form.quantidade && `Quantidade: ${form.quantidade}`,
