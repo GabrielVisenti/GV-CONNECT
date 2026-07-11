@@ -38,7 +38,7 @@ type Form = {
   email: string;
 };
 
-export function QuoteModal({
+export const QuoteModal = memo(function QuoteModal({
   open,
   onClose,
   type,
