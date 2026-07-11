@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import type { QuoteType } from "@/components/site/QuoteModal";
+import { QuoteModal, type QuoteType } from "@/components/site/QuoteModal";
 import {
   Differentials,
   EmpresasResultados,
@@ -16,10 +16,6 @@ import {
   About,
   Footer,
 } from "@/components/site/Sections";
-
-const QuoteModal = lazy(() =>
-  import("@/components/site/QuoteModal").then((m) => ({ default: m.QuoteModal })),
-);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,11 +64,7 @@ function Index() {
       <About />
       <Footer />
       <WhatsAppFab />
-      {open && (
-        <Suspense fallback={null}>
-          <QuoteModal open={open} onClose={closeQuote} type={type} />
-        </Suspense>
-      )}
+      <QuoteModal open={open} onClose={closeQuote} type={type} />
     </main>
   );
 }

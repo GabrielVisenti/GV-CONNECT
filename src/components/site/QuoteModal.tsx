@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 import { WHATSAPP_NUMBER } from "./WhatsAppFab";
 
@@ -38,7 +38,7 @@ type Form = {
   email: string;
 };
 
-export function QuoteModal({
+export const QuoteModal = memo(function QuoteModal({
   open,
   onClose,
   type,
@@ -100,8 +100,9 @@ export function QuoteModal({
 
   return (
     <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-6">
-      <div className="absolute inset-0 bg-navy-deep/70 backdrop-blur-md animate-in fade-in duration-300" onClick={onClose} />
-      <div className="relative w-full sm:max-w-xl bg-background rounded-t-3xl sm:rounded-3xl shadow-elevated border border-gold/20 overflow-hidden animate-in slide-in-from-bottom-8 sm:zoom-in-95 duration-500">
+      <div className="absolute inset-0 bg-navy-deep/70 backdrop-blur-md animate-in fade-in duration-150" onClick={onClose} />
+      <div className="relative w-full sm:max-w-xl bg-background rounded-t-3xl sm:rounded-3xl shadow-elevated border border-gold/20 overflow-hidden animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200">
+
         {/* gold bar */}
         <div className="h-1 w-full bg-[image:var(--gradient-gold)]" />
         <button
@@ -224,7 +225,7 @@ export function QuoteModal({
       </div>
     </div>
   );
-}
+});
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
