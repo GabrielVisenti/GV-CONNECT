@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 import { WHATSAPP_NUMBER } from "./WhatsAppFab";
 
