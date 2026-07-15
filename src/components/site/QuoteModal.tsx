@@ -99,9 +99,15 @@ export const QuoteModal = memo(function QuoteModal({
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-6">
-      <div className="absolute inset-0 bg-navy-deep/70 backdrop-blur-md animate-in fade-in duration-150" onClick={onClose} />
-      <div className="relative w-full sm:max-w-xl bg-background rounded-t-3xl sm:rounded-3xl shadow-elevated border border-gold/20 overflow-hidden animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200">
+    <div
+      className={`fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-6 ${
+        open ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
+      }`}
+      aria-hidden={!open}
+    >
+      <div className="absolute inset-0 bg-navy-deep/80" onClick={onClose} />
+      <div className="relative w-full sm:max-w-xl bg-background rounded-t-3xl sm:rounded-3xl shadow-elevated border border-gold/20 overflow-hidden">
+
 
         {/* gold bar */}
         <div className="h-1 w-full bg-[image:var(--gradient-gold)]" />
