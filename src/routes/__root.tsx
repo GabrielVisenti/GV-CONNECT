@@ -98,9 +98,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "preload",
         as: "image",
         type: "image/avif",
-        imagesrcset:
+        imageSrcSet:
           "/assets/logo-320.avif 320w, /assets/logo-480.avif 480w, /assets/logo-640.avif 640w",
-        imagesizes: "(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px",
+        imageSizes: "(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px",
         fetchPriority: "high",
       },
     ],
