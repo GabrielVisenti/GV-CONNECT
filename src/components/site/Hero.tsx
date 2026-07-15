@@ -1,5 +1,11 @@
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
+import avif320 from "@/assets/logo-320.avif.asset.json";
+import avif480 from "@/assets/logo-480.avif.asset.json";
+import avif640 from "@/assets/logo-640.avif.asset.json";
+import webp320 from "@/assets/logo-320.webp.asset.json";
+import webp480 from "@/assets/logo-480.webp.asset.json";
+import webp640 from "@/assets/logo-640.webp.asset.json";
+import png640 from "@/assets/logo-640.png.asset.json";
 import { WHATSAPP_HREF } from "./WhatsAppFab";
 
 export function Hero() {
