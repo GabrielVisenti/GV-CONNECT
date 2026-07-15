@@ -8,7 +8,7 @@ export function Logo({ className = "h-20 lg:h-24" }: { className?: string }) {
         alt="GV Connect"
         loading="eager"
         decoding="async"
-        className={`${className} w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-[0_4px_20px_rgba(212,175,55,0.35)]`}
+        className={`${className} w-auto object-contain transition-transform group-hover:scale-105`}
       />
     </a>
   );
