@@ -14,8 +14,9 @@ export function WhatsAppFab() {
       className="fixed bottom-6 right-6 z-40 group"
       aria-label="Falar no WhatsApp"
     >
-      <span className="absolute inset-0 rounded-full bg-emerald-400/40 blur-xl animate-glow" aria-hidden />
-      <span className="relative flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] text-white shadow-elevated transition-transform duration-300 group-hover:scale-110">
+      <span className="absolute inset-0 rounded-full bg-emerald-400/30 blur-lg" aria-hidden />
+      <span className="relative flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] text-white shadow-elevated transition-transform duration-200 group-hover:scale-110">
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"

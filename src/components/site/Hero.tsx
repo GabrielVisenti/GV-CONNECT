@@ -110,20 +110,20 @@ function Particles() {
 function LogoStage() {
   return (
     <div className="relative mt-14 flex items-center justify-center">
-      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] rounded-full border border-gold/15 animate-spin-slower" />
-      <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-gold/20 animate-spin-slow" />
-      <div className="absolute h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] rounded-full border border-gold/30" />
+      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] rounded-full border border-gold/15" aria-hidden />
+      <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full border border-gold/20" aria-hidden />
+      <div className="absolute h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] rounded-full border border-gold/30" aria-hidden />
 
-      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] animate-spin-slow">
+      <div className="absolute h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] animate-spin-slower" aria-hidden>
         <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold shadow-gold" />
         <span className="absolute right-0 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-gold-soft" />
-      </div>
-      <div className="absolute h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] animate-spin-slower">
         <span className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-gold/80" />
         <span className="absolute left-1/2 bottom-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold shadow-gold" />
       </div>
 
-      <div className="absolute h-[260px] w-[260px] sm:h-[340px] sm:w-[340px] rounded-full bg-gold/25 blur-3xl animate-glow" />
+      <div className="absolute h-[260px] w-[260px] sm:h-[340px] sm:w-[340px] rounded-full bg-gold/25 blur-3xl" aria-hidden />
+
+
 
       <div className="relative h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 flex items-center justify-center animate-float">
         <img

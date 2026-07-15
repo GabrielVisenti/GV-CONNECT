@@ -20,7 +20,8 @@ export function Nav() {
   useEffect(() => {
     let ticking = false;
     const update = () => {
-      setScrolled(window.scrollY > 24);
+      const next = window.scrollY > 24;
+      setScrolled((prev) => (prev === next ? prev : next));
       ticking = false;
     };
     const onScroll = () => {
@@ -33,6 +34,7 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
 
 
   return (

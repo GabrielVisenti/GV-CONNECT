@@ -160,8 +160,10 @@
   animation: shimmer 6s linear infinite;
 }
 
-/* Off-screen sections skip layout/paint until near viewport */
-section {
+/* Off-screen sections skip layout/paint until near viewport.
+   Exclude the hero (#top) so first paint is immediate and anchor
+   scrolling lands at the correct offset. */
+section:not(#top) {
   content-visibility: auto;
   contain-intrinsic-size: 1px 800px;
 }
