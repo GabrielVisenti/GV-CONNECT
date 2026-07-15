@@ -88,29 +88,22 @@ function BackgroundLayers() {
   );
 }
 
+const PARTICLES = Array.from({ length: 14 }, (_, i) => ({
+  left: (i * 37) % 100,
+  top: (i * 53) % 100,
+  size: 1 + (i % 3),
+}));
+
 function Particles() {
-  const dots = Array.from({ length: 36 });
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      {dots.map((_, i) => {
-        const left = (i * 37) % 100;
-        const top = (i * 53) % 100;
-        const delay = (i % 9) * 0.5;
-        const size = 1 + (i % 3);
-        return (
-          <span
-            key={i}
-            style={{
-              left: `${left}%`,
-              top: `${top}%`,
-              width: size,
-              height: size,
-              animationDelay: `${delay}s`,
-            }}
-            className="absolute rounded-full bg-gold/70 animate-glow"
-          />
-        );
-      })}
+    <div className="absolute inset-0 overflow-hidden" aria-hidden>
+      {PARTICLES.map((p, i) => (
+        <span
+          key={i}
+          style={{ left: `${p.left}%`, top: `${p.top}%`, width: p.size, height: p.size }}
+          className="absolute rounded-full bg-gold/70"
+        />
+      ))}
     </div>
   );
 }
@@ -139,8 +132,12 @@ function LogoStage() {
           alt="GV Connect"
           loading="eager"
           decoding="async"
+          fetchPriority="high"
+          width={512}
+          height={512}
           className="relative h-full w-full object-contain"
         />
+
       </div>
     </div>
   );

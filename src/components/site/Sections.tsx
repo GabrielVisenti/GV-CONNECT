@@ -212,8 +212,11 @@ export function LenovoSection() {
               <img
                 src={gvLenovoPartnership.url}
                 alt="Parceria GV CONNECT e Lenovo"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
+
             </div>
 
             {/* Linha de credibilidade — selo + certificado */}
@@ -223,16 +226,22 @@ export function LenovoSection() {
                 <img
                   src={lenovoEmblem.url}
                   alt="Selo Lenovo 360 Authorized 2026"
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
+
               </div>
               {/* Certificado (3/5) — elemento complementar */}
               <div className="col-span-3 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
                 <img
                   src={lenovoCertificate.url}
                   alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect"
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
+
               </div>
             </div>
           </div>
@@ -319,12 +328,13 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                   <img
                     src={s.image}
                     alt={s.title}
-                    decoding="sync"
-                    fetchPriority="high"
+                    loading="lazy"
+                    decoding="async"
                     draggable={false}
-                    style={{ imageRendering: "auto", transform: "none", filter: "none", backfaceVisibility: "hidden", objectPosition: s.objectPosition }}
+                    style={{ objectPosition: s.objectPosition }}
                     className="absolute inset-0 h-full w-full object-cover select-none"
                   />
+
 
                   {/* Subtle gradient sweep on hover */}
                   <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
@@ -371,7 +381,7 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
           role="dialog"
           aria-modal="true"
           onClick={() => setPreview(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 p-4 sm:p-8"
         >
           <button
             type="button"
@@ -386,8 +396,8 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
             alt={preview.alt}
             onClick={(e) => e.stopPropagation()}
             draggable={false}
-            style={{ imageRendering: "auto" }}
-            className="max-h-[90vh] max-w-[92vw] object-contain rounded-xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)] animate-in zoom-in-95 duration-300"
+            decoding="async"
+            className="max-h-[90vh] max-w-[92vw] object-contain rounded-xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)]"
           />
         </div>
       )}
