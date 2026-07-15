@@ -159,3 +159,18 @@
   color: transparent;
   animation: shimmer 6s linear infinite;
 }
+
+/* Off-screen sections skip layout/paint until near viewport */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
