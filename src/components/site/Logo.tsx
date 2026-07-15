@@ -23,6 +23,7 @@ export function Logo({ className = "h-20 lg:h-24" }: { className?: string }) {
           height={320}
           loading="eager"
           decoding="async"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
           className={`${className} w-auto object-contain transition-transform group-hover:scale-105`}
         />
       </picture>
