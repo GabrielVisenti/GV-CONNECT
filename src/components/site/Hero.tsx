@@ -1,5 +1,11 @@
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/gv-connect-logo-hero.png.asset.json";
+import avif320 from "@/assets/logo-320.avif.asset.json";
+import avif480 from "@/assets/logo-480.avif.asset.json";
+import avif640 from "@/assets/logo-640.avif.asset.json";
+import webp320 from "@/assets/logo-320.webp.asset.json";
+import webp480 from "@/assets/logo-480.webp.asset.json";
+import webp640 from "@/assets/logo-640.webp.asset.json";
+import png640 from "@/assets/logo-640.png.asset.json";
 import { WHATSAPP_HREF } from "./WhatsAppFab";
 
 export function Hero() {
@@ -126,17 +132,28 @@ function LogoStage() {
 
 
       <div className="relative h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 flex items-center justify-center animate-float">
-        <img
-          src={logo.url}
-          alt="GV Connect"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          width={512}
-          height={512}
-          className="relative h-full w-full object-contain"
-        />
-
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={`${avif320.url} 320w, ${avif480.url} 480w, ${avif640.url} 640w`}
+            sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px"
+          />
+          <source
+            type="image/webp"
+            srcSet={`${webp320.url} 320w, ${webp480.url} 480w, ${webp640.url} 640w`}
+            sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px"
+          />
+          <img
+            src={png640.url}
+            alt="GV Connect"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            width={640}
+            height={640}
+            className="relative h-full w-full object-contain"
+          />
+        </picture>
       </div>
     </div>
   );
