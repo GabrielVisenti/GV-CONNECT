@@ -68,7 +68,7 @@ export const QuoteModal = memo(function QuoteModal({
     };
   }, [open]);
 
-  if (!open) return null;
+  
 
   const update = (k: keyof Form, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
