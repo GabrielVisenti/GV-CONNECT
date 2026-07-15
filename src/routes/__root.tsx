@@ -98,9 +98,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "preload",
         as: "image",
         type: "image/avif",
-        imagesrcset:
-          "/__l5e/assets-v1/a064b033-2bbf-4009-a4a9-12f10507aadc/logo-320.avif 320w, /__l5e/assets-v1/9c55692d-62df-417c-9de8-a0cf2b0b4b1a/logo-480.avif 480w, /__l5e/assets-v1/ba870d53-ee23-44a2-ae6c-4faa77a9fdb7/logo-640.avif 640w",
-        imagesizes: "(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px",
+        imageSrcSet:
+          "/assets/logo-320.avif 320w, /assets/logo-480.avif 480w, /assets/logo-640.avif 640w",
+        imageSizes: "(min-width: 1024px) 320px, (min-width: 640px) 288px, 224px",
         fetchPriority: "high",
       },
     ],
