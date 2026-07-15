@@ -139,7 +139,7 @@ function LogoStage() {
           alt="GV Connect"
           loading="eager"
           decoding="async"
-          className="relative h-full w-full object-contain drop-shadow-[0_25px_60px_rgba(212,175,55,0.55)]"
+          className="relative h-full w-full object-contain"
         />
       </div>
     </div>
