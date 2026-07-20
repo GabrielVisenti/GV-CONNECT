@@ -249,10 +249,6 @@ export function LenovoSection() {
 }
 
 
-import catInformatica from "@/assets/cat-informatica.png.asset.json";
-import catToners from "@/assets/cat-toners.png.asset.json";
-import catManutencao from "@/assets/cat-manutencao.png.asset.json";
-
 const SOLUTIONS = [
   {
     key: "informatica" as QuoteType,
@@ -260,7 +256,7 @@ const SOLUTIONS = [
     title: "Equipamentos de Informática",
     text: "Notebooks, desktops, monitores e periféricos para empresas e órgãos públicos.",
     cta: "Solicitar Cotação",
-    image: catInformatica.url,
+    imageBase: "/assets/cat-informatica",
     objectPosition: "center" as const,
   },
   {
@@ -269,7 +265,7 @@ const SOLUTIONS = [
     title: "Toners e Cartuchos",
     text: "Linha completa de suprimentos originais e compatíveis premium para todos os modelos.",
     cta: "Encontrar Meu Toner",
-    image: catToners.url,
+    imageBase: "/assets/cat-toners",
     objectPosition: "top center" as const,
   },
   {
@@ -278,7 +274,7 @@ const SOLUTIONS = [
     title: "Manutenção Especializada",
     text: "Serviços preventivos e corretivos para computadores, notebooks e impressoras.",
     cta: "Solicitar Atendimento",
-    image: catManutencao.url,
+    imageBase: "/assets/cat-manutencao",
     objectPosition: "center 30%" as const,
   },
 ];
