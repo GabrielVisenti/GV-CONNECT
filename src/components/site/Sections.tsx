@@ -206,11 +206,11 @@ export function LenovoSection() {
           <div className="space-y-4">
             {/* Imagem principal — dominante */}
             <div className="relative rounded-2xl border border-gold/30 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] aspect-[16/10]">
-              <img
-                src={gvLenovoPartnership.url}
+              <ResponsiveImage
+                base="/assets/gv-lenovo-partnership"
+                widths={[480, 800, 1200]}
+                sizes="(min-width: 1024px) 640px, 100vw"
                 alt="Parceria GV CONNECT e Lenovo"
-                loading="lazy"
-                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
@@ -220,22 +220,22 @@ export function LenovoSection() {
             <div className="grid grid-cols-5 gap-4">
               {/* Selo (2/5) — destaque de credibilidade */}
               <div className="col-span-2 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={lenovoEmblem.url}
+                <ResponsiveImage
+                  base="/assets/lenovo-emblem"
+                  widths={[200, 400, 600]}
+                  sizes="(min-width: 1024px) 260px, 40vw"
                   alt="Selo Lenovo 360 Authorized 2026"
-                  loading="lazy"
-                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
 
               </div>
               {/* Certificado (3/5) — elemento complementar */}
               <div className="col-span-3 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={lenovoCertificate.url}
+                <ResponsiveImage
+                  base="/assets/lenovo-certificate"
+                  widths={[320, 560, 800]}
+                  sizes="(min-width: 1024px) 380px, 55vw"
                   alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect"
-                  loading="lazy"
-                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
 
