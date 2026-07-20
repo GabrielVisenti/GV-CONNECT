@@ -62,8 +62,8 @@ function BackgroundLayers() {
   return (
     <>
       <div className="absolute inset-0 tech-grid opacity-50" aria-hidden />
-      <div className="absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-gold/15 blur-[120px]" aria-hidden />
-      <div className="absolute -top-32 -right-32 h-[380px] w-[380px] rounded-full bg-navy-soft/50 blur-[110px]" aria-hidden />
+      <div className="hidden sm:block absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-gold/15 blur-[120px]" aria-hidden />
+      <div className="hidden sm:block absolute -top-32 -right-32 h-[380px] w-[380px] rounded-full bg-navy-soft/50 blur-[110px]" aria-hidden />
 
       <svg
         className="absolute inset-0 h-full w-full opacity-[0.18]"
