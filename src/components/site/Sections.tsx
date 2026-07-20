@@ -557,12 +557,12 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6 flex justify-center">
           <div className="relative w-full max-w-xl rounded-3xl border border-gold/30 overflow-hidden shadow-elevated bg-white aspect-[3/2]">
-            <img
-              src={nossaHistoria.url}
+            <ResponsiveImage
+              base="/assets/nossa-historia"
+              widths={[480, 800, 1200]}
+              sizes="(min-width: 1024px) 576px, 92vw"
               alt="GV Connect — Nossa história"
               className="absolute inset-0 w-full h-full object-contain object-center"
-              style={{ imageRendering: "auto" }}
-              loading="lazy"
             />
           </div>
         </div>
