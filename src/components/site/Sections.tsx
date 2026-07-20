@@ -26,10 +26,7 @@ import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
 import { WHATSAPP_HREF } from "./WhatsAppFab";
-import lenovoCertificate from "@/assets/lenovo-certificate.png.asset.json";
-import lenovoEmblem from "@/assets/lenovo-emblem.png.asset.json";
-import gvLenovoPartnership from "@/assets/gv-lenovo-partnership.png.asset.json";
-import nossaHistoria from "@/assets/nossa-historia.png.asset.json";
+import { ResponsiveImage } from "./ResponsiveImage";
 
 type OpenQuote = (t: QuoteType) => void;
 
@@ -209,11 +206,11 @@ export function LenovoSection() {
           <div className="space-y-4">
             {/* Imagem principal — dominante */}
             <div className="relative rounded-2xl border border-gold/30 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] aspect-[16/10]">
-              <img
-                src={gvLenovoPartnership.url}
+              <ResponsiveImage
+                base="/assets/gv-lenovo-partnership"
+                widths={[480, 800, 1200]}
+                sizes="(min-width: 1024px) 640px, 100vw"
                 alt="Parceria GV CONNECT e Lenovo"
-                loading="lazy"
-                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
@@ -223,22 +220,22 @@ export function LenovoSection() {
             <div className="grid grid-cols-5 gap-4">
               {/* Selo (2/5) — destaque de credibilidade */}
               <div className="col-span-2 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={lenovoEmblem.url}
+                <ResponsiveImage
+                  base="/assets/lenovo-emblem"
+                  widths={[200, 400, 600]}
+                  sizes="(min-width: 1024px) 260px, 40vw"
                   alt="Selo Lenovo 360 Authorized 2026"
-                  loading="lazy"
-                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
 
               </div>
               {/* Certificado (3/5) — elemento complementar */}
               <div className="col-span-3 relative rounded-2xl border border-gold/30 bg-white overflow-hidden shadow-[0_18px_50px_-25px_rgba(0,0,0,0.55)] aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={lenovoCertificate.url}
+                <ResponsiveImage
+                  base="/assets/lenovo-certificate"
+                  widths={[320, 560, 800]}
+                  sizes="(min-width: 1024px) 380px, 55vw"
                   alt="Certificado Lenovo 360 Authorized 2026 – G V Alexandre Connect"
-                  loading="lazy"
-                  decoding="async"
                   className="max-h-full max-w-full object-contain p-3"
                 />
 
@@ -252,10 +249,6 @@ export function LenovoSection() {
 }
 
 
-import catInformatica from "@/assets/cat-informatica.png.asset.json";
-import catToners from "@/assets/cat-toners.png.asset.json";
-import catManutencao from "@/assets/cat-manutencao.png.asset.json";
-
 const SOLUTIONS = [
   {
     key: "informatica" as QuoteType,
@@ -263,7 +256,7 @@ const SOLUTIONS = [
     title: "Equipamentos de Informática",
     text: "Notebooks, desktops, monitores e periféricos para empresas e órgãos públicos.",
     cta: "Solicitar Cotação",
-    image: catInformatica.url,
+    imageBase: "/assets/cat-informatica",
     objectPosition: "center" as const,
   },
   {
@@ -272,7 +265,7 @@ const SOLUTIONS = [
     title: "Toners e Cartuchos",
     text: "Linha completa de suprimentos originais e compatíveis premium para todos os modelos.",
     cta: "Encontrar Meu Toner",
-    image: catToners.url,
+    imageBase: "/assets/cat-toners",
     objectPosition: "top center" as const,
   },
   {
@@ -281,7 +274,7 @@ const SOLUTIONS = [
     title: "Manutenção Especializada",
     text: "Serviços preventivos e corretivos para computadores, notebooks e impressoras.",
     cta: "Solicitar Atendimento",
-    image: catManutencao.url,
+    imageBase: "/assets/cat-manutencao",
     objectPosition: "center 30%" as const,
   },
 ];
@@ -321,15 +314,15 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                 {/* Image showcase */}
                 <button
                   type="button"
-                  onClick={() => setPreview({ src: s.image, alt: s.title })}
+                  onClick={() => setPreview({ src: `${s.imageBase}-1200.webp`, alt: s.title })}
                   aria-label={`Ampliar imagem de ${s.title}`}
                   className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <img
-                    src={s.image}
+                  <ResponsiveImage
+                    base={s.imageBase}
+                    widths={[480, 800, 1200]}
+                    sizes="(min-width: 1024px) 440px, (min-width: 768px) 45vw, 92vw"
                     alt={s.title}
-                    loading="lazy"
-                    decoding="async"
                     draggable={false}
                     style={{ objectPosition: s.objectPosition }}
                     className="absolute inset-0 h-full w-full object-cover select-none"
@@ -560,12 +553,12 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6 flex justify-center">
           <div className="relative w-full max-w-xl rounded-3xl border border-gold/30 overflow-hidden shadow-elevated bg-white aspect-[3/2]">
-            <img
-              src={nossaHistoria.url}
+            <ResponsiveImage
+              base="/assets/nossa-historia"
+              widths={[480, 800, 1200]}
+              sizes="(min-width: 1024px) 576px, 92vw"
               alt="GV Connect — Nossa história"
               className="absolute inset-0 w-full h-full object-contain object-center"
-              style={{ imageRendering: "auto" }}
-              loading="lazy"
             />
           </div>
         </div>
