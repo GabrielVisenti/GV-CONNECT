@@ -314,15 +314,15 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                 {/* Image showcase */}
                 <button
                   type="button"
-                  onClick={() => setPreview({ src: s.image, alt: s.title })}
+                  onClick={() => setPreview({ src: `${s.imageBase}-1200.webp`, alt: s.title })}
                   aria-label={`Ampliar imagem de ${s.title}`}
                   className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <img
-                    src={s.image}
+                  <ResponsiveImage
+                    base={s.imageBase}
+                    widths={[480, 800, 1200]}
+                    sizes="(min-width: 1024px) 440px, (min-width: 768px) 45vw, 92vw"
                     alt={s.title}
-                    loading="lazy"
-                    decoding="async"
                     draggable={false}
                     style={{ objectPosition: s.objectPosition }}
                     className="absolute inset-0 h-full w-full object-cover select-none"
