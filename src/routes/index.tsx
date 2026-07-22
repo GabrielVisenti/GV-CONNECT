@@ -10,9 +10,7 @@ import {
   LenovoSection,
   Solutions,
   Brands,
-  TecnologiaEmpresas,
   Licitacoes,
-  ValueList,
   About,
   Footer,
 } from "@/components/site/Sections";
