@@ -411,7 +411,7 @@ export function Licitacoes() {
   ];
   return (
     <section id="licitacoes" className="py-24 sm:py-32 bg-secondary">
-      <div className="pointer-events-none absolute inset-x-0 -mt-24 h-24 bg-gradient-to-b from-transparent to-secondary" aria-hidden />
+
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
         <div>
