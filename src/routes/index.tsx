@@ -56,9 +56,7 @@ function Index() {
       <LenovoSection />
       <Solutions openQuote={openQuote} />
       <Brands />
-      <TecnologiaEmpresas />
       <Licitacoes />
-      <ValueList />
       <About />
       <Footer />
       <WhatsAppFab />
