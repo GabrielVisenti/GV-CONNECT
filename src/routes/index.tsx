@@ -10,9 +10,7 @@ import {
   LenovoSection,
   Solutions,
   Brands,
-  TecnologiaEmpresas,
   Licitacoes,
-  ValueList,
   About,
   Footer,
 } from "@/components/site/Sections";
@@ -58,9 +56,7 @@ function Index() {
       <LenovoSection />
       <Solutions openQuote={openQuote} />
       <Brands />
-      <TecnologiaEmpresas />
       <Licitacoes />
-      <ValueList />
       <About />
       <Footer />
       <WhatsAppFab />

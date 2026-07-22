@@ -1,12 +1,8 @@
 import {
-  Truck,
-  Handshake,
   Gavel,
-  ShieldCheck,
   Monitor,
   Printer,
   Wrench,
-  Check,
   ArrowRight,
   Mail,
   MapPin,
@@ -14,13 +10,16 @@ import {
   Laptop,
   Headset,
   BadgePercent,
-  Building2,
   Layers,
   Award,
   Users,
-  Rocket,
   Expand,
   X,
+  Sparkles,
+  PackageCheck,
+  Truck,
+  Cpu,
+  Check,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { QuoteType } from "./QuoteModal";
@@ -33,28 +32,51 @@ type OpenQuote = (t: QuoteType) => void;
 
 export function Differentials() {
   const items = [
-    { icon: Truck, title: "Entrega Rápida", text: "Atendimento ágil e eficiente em todo o território nacional." },
-    { icon: Handshake, title: "Condições Competitivas", text: "Parcerias estratégicas com os maiores distribuidores do mercado." },
-    { icon: Gavel, title: "Especialistas em Licitações", text: "Experiência sólida em fornecimento corporativo e governamental." },
-    { icon: ShieldCheck, title: "Revenda Autorizada Lenovo", text: "Produtos originais com garantia nacional e suporte oficial." },
+    {
+      icon: Headset,
+      title: "Atendimento Especializado",
+      text: "Equipe preparada para atender empresas e órgãos públicos com agilidade e eficiência.",
+    },
+    {
+      icon: PackageCheck,
+      title: "Produtos de Qualidade",
+      text: "Equipamentos, toners e suprimentos selecionados dos principais fabricantes e distribuidores.",
+    },
+    {
+      icon: Truck,
+      title: "Entrega Confiável",
+      text: "Compromisso com rapidez, segurança e excelência em cada fornecimento.",
+    },
+    {
+      icon: Cpu,
+      title: "Soluções em Tecnologia",
+      text: "Atendimento completo para empresas, instituições públicas e clientes corporativos.",
+    },
   ];
   return (
-    <section className="py-24 sm:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeader eyebrow="Por que GV Connect" title="Diferenciais que se sentem em cada entrega" />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map((it, i) => (
+    <section className="py-28 sm:py-36 bg-background">
+      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.4em] text-gold-deep">Diferenciais</p>
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl text-navy-deep leading-tight">
+            Excelência em <span className="text-gold-gradient">cada detalhe</span>
+          </h2>
+        </div>
+        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/70 rounded-2xl overflow-hidden border border-border/70">
+          {items.map((it) => (
             <div
               key={it.title}
-              className="group relative p-7 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all duration-500"
-              style={{ transitionDelay: `${i * 40}ms` }}
+              className="group relative bg-white p-10 flex flex-col items-start hover:bg-secondary/40 transition-colors duration-500"
             >
-              <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="h-12 w-12 rounded-xl bg-navy-deep flex items-center justify-center shadow-gold ring-1 ring-gold/30 group-hover:scale-110 transition-transform">
-                <it.icon className="text-gold" size={22} />
-              </div>
-              <h3 className="mt-5 text-lg font-display text-navy-deep">{it.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.text}</p>
+              <span className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-gold/40 text-gold-deep group-hover:border-gold group-hover:text-navy-deep group-hover:bg-[image:var(--gradient-gold)] transition-all">
+                <it.icon size={20} strokeWidth={1.5} />
+              </span>
+              <h3 className="mt-8 text-lg font-display text-navy-deep tracking-tight">
+                {it.title}
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {it.text}
+              </p>
             </div>
           ))}
         </div>
@@ -62,6 +84,7 @@ export function Differentials() {
     </section>
   );
 }
+
 
 export function EmpresasResultados() {
   const cards = [
@@ -116,56 +139,6 @@ export function EmpresasResultados() {
   );
 }
 
-export function TecnologiaEmpresas() {
-  const benefits = [
-    "Atendimento especializado",
-    "Equipamentos corporativos",
-    "Soluções sob medida",
-    "Suporte consultivo",
-    "Condições competitivas",
-    "Entrega rápida",
-  ];
-  return (
-    <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
-      <div className="absolute inset-0 tech-grid opacity-30" />
-      <div className="absolute -top-32 left-1/4 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6">
-          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">Empresarial</p>
-          <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
-            Tecnologia para <span className="text-gold-gradient">Empresas</span>
-          </h2>
-          <p className="mt-6 text-platinum/80 text-lg leading-relaxed max-w-xl">
-            A GV CONNECT atende empresas de diferentes portes, oferecendo equipamentos,
-            suprimentos e soluções tecnológicas que contribuem para produtividade,
-            eficiência e crescimento.
-          </p>
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
-          >
-            Solicitar Cotação <ArrowRight size={16} />
-          </a>
-        </div>
-        <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
-          {benefits.map((b) => (
-            <div
-              key={b}
-              className="flex items-center gap-3 p-5 rounded-xl border border-gold/20 bg-white/[0.04] backdrop-blur hover:border-gold/50 hover:bg-white/[0.07] transition"
-            >
-              <span className="h-9 w-9 rounded-full bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
-                <Check size={15} className="text-navy-deep" strokeWidth={3} />
-              </span>
-              <span className="text-sm text-platinum/90">{b}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function LenovoSection() {
   return (
@@ -437,7 +410,9 @@ export function Licitacoes() {
     { icon: Users, label: "Clientes Atendidos", text: "Empresas e órgãos públicos em todo o Brasil." },
   ];
   return (
-    <section id="licitacoes" className="py-24 sm:py-32 bg-background">
+    <section id="licitacoes" className="py-24 sm:py-32 bg-secondary">
+
+
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-gold-deep">Corporativo & Público</p>
@@ -465,7 +440,7 @@ export function Licitacoes() {
           {credibility.map((c) => (
             <div
               key={c.label}
-              className="group relative p-6 rounded-2xl border border-border bg-secondary hover:border-gold/60 hover:shadow-elevated transition-all"
+              className="group relative p-6 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all"
             >
               <div className="h-11 w-11 rounded-xl bg-navy-deep flex items-center justify-center shadow-gold ring-1 ring-gold/30">
                 <c.icon className="text-gold" size={20} />
@@ -482,70 +457,6 @@ export function Licitacoes() {
   );
 }
 
-export function ValueList() {
-  const items = [
-    { icon: ShieldCheck, t: "Revenda Autorizada Lenovo" },
-    { icon: Handshake, t: "Grandes distribuidores parceiros" },
-    { icon: Headset, t: "Atendimento especializado" },
-    { icon: Truck, t: "Entrega rápida e confiável" },
-    { icon: Building2, t: "Soluções corporativas" },
-    { icon: Award, t: "Produtos originais e compatíveis premium" },
-    { icon: Gavel, t: "Atendimento para empresas e órgãos públicos" },
-    { icon: Check, t: "Compromisso com qualidade" },
-    { icon: Rocket, t: "Tecnologia ao seu alcance" },
-  ];
-  return (
-    <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
-      <div className="absolute inset-0 tech-grid opacity-30" />
-      <div className="absolute -bottom-32 -right-20 h-[460px] w-[460px] rounded-full bg-gold/15 blur-[140px]" />
-      <div className="absolute -top-32 -left-20 h-[420px] w-[420px] rounded-full bg-navy-soft/40 blur-[120px]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">Diferenciais</p>
-          <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
-            Por que escolher a <span className="text-gold-gradient">GV CONNECT?</span>
-          </h2>
-          <p className="mt-6 text-platinum/80 text-lg leading-relaxed">
-            Trabalhamos para oferecer muito mais do que produtos. Entregamos soluções
-            que ajudam empresas e instituições a alcançarem melhores resultados através
-            da tecnologia.
-          </p>
-        </div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map((it) => (
-            <div
-              key={it.t}
-              className="group flex items-center gap-4 p-5 rounded-xl border border-gold/15 bg-white/[0.04] backdrop-blur hover:border-gold/50 hover:bg-white/[0.07] transition"
-            >
-              <span className="h-10 w-10 rounded-xl bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
-                <it.icon size={18} className="text-navy-deep" />
-              </span>
-              <span className="text-sm text-platinum/90 font-medium">{it.t}</span>
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 flex flex-wrap gap-4">
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
-          >
-            Solicitar Cotação <ArrowRight size={16} />
-          </a>
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-platinum border border-platinum/25 hover:border-gold/60 hover:text-gold transition-colors"
-          >
-            Falar com Especialista
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function About() {
   return (
@@ -592,7 +503,7 @@ export function Footer() {
     <footer id="contato" className="relative bg-navy-deep text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-25" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-20 grid lg:grid-cols-12 gap-12">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-28 lg:py-32 grid lg:grid-cols-12 gap-14 lg:gap-20">
         <div className="lg:col-span-5">
           <Logo />
           <p className="mt-5 text-lg font-display text-platinum">A tecnologia que o seu negócio precisa.</p>
@@ -664,7 +575,7 @@ export function Footer() {
 
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-platinum/50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-platinum/50">
           <p>© {new Date().getFullYear()} GV Alexandre Connect — CNPJ 59.901.174/0001-78</p>
           <p>GV CONNECT — Tecnologia Corporativa</p>
         </div>
