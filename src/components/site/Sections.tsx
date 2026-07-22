@@ -139,56 +139,6 @@ export function EmpresasResultados() {
   );
 }
 
-export function TecnologiaEmpresas() {
-  const benefits = [
-    "Atendimento especializado",
-    "Equipamentos corporativos",
-    "Soluções sob medida",
-    "Suporte consultivo",
-    "Condições competitivas",
-    "Entrega rápida",
-  ];
-  return (
-    <section className="relative py-24 sm:py-32 bg-navy-gradient text-platinum overflow-hidden">
-      <div className="absolute inset-0 tech-grid opacity-30" />
-      <div className="absolute -top-32 left-1/4 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6">
-          <p className="text-xs uppercase tracking-[0.35em] text-gold-soft">Empresarial</p>
-          <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
-            Tecnologia para <span className="text-gold-gradient">Empresas</span>
-          </h2>
-          <p className="mt-6 text-platinum/80 text-lg leading-relaxed max-w-xl">
-            A GV CONNECT atende empresas de diferentes portes, oferecendo equipamentos,
-            suprimentos e soluções tecnológicas que contribuem para produtividade,
-            eficiência e crescimento.
-          </p>
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-navy-deep bg-[image:var(--gradient-gold)] shadow-gold hover:scale-[1.03] transition-transform"
-          >
-            Solicitar Cotação <ArrowRight size={16} />
-          </a>
-        </div>
-        <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
-          {benefits.map((b) => (
-            <div
-              key={b}
-              className="flex items-center gap-3 p-5 rounded-xl border border-gold/20 bg-white/[0.04] backdrop-blur hover:border-gold/50 hover:bg-white/[0.07] transition"
-            >
-              <span className="h-9 w-9 rounded-full bg-[image:var(--gradient-gold)] flex items-center justify-center shrink-0 shadow-gold">
-                <Check size={15} className="text-navy-deep" strokeWidth={3} />
-              </span>
-              <span className="text-sm text-platinum/90">{b}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function LenovoSection() {
   return (
