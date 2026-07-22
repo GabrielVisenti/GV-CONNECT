@@ -503,7 +503,7 @@ export function Footer() {
     <footer id="contato" className="relative bg-navy-deep text-platinum overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-25" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-20 grid lg:grid-cols-12 gap-12">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-28 lg:py-32 grid lg:grid-cols-12 gap-14 lg:gap-20">
         <div className="lg:col-span-5">
           <Logo />
           <p className="mt-5 text-lg font-display text-platinum">A tecnologia que o seu negócio precisa.</p>
