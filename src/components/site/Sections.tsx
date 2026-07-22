@@ -440,7 +440,7 @@ export function Licitacoes() {
           {credibility.map((c) => (
             <div
               key={c.label}
-              className="group relative p-6 rounded-2xl border border-border bg-secondary hover:border-gold/60 hover:shadow-elevated transition-all"
+              className="group relative p-6 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all"
             >
               <div className="h-11 w-11 rounded-xl bg-navy-deep flex items-center justify-center shadow-gold ring-1 ring-gold/30">
                 <c.icon className="text-gold" size={20} />
