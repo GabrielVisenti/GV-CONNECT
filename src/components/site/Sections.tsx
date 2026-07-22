@@ -575,7 +575,7 @@ export function Footer() {
 
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-platinum/50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-platinum/50">
           <p>© {new Date().getFullYear()} GV Alexandre Connect — CNPJ 59.901.174/0001-78</p>
           <p>GV CONNECT — Tecnologia Corporativa</p>
         </div>
