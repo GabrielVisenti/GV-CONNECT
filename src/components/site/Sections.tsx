@@ -31,51 +31,34 @@ type OpenQuote = (t: QuoteType) => void;
 
 
 export function Differentials() {
-  const items = [
-    {
-      icon: Headset,
-      title: "Atendimento Especializado",
-      text: "Equipe preparada para atender empresas e órgãos públicos com agilidade e eficiência.",
-    },
-    {
-      icon: PackageCheck,
-      title: "Produtos de Qualidade",
-      text: "Equipamentos, toners e suprimentos selecionados dos principais fabricantes e distribuidores.",
-    },
-    {
-      icon: Truck,
-      title: "Entrega Confiável",
-      text: "Compromisso com rapidez, segurança e excelência em cada fornecimento.",
-    },
-    {
-      icon: Cpu,
-      title: "Soluções em Tecnologia",
-      text: "Atendimento completo para empresas, instituições públicas e clientes corporativos.",
-    },
+  const pillars = [
+    { n: "01", title: "Atendimento", text: "Consultoria próxima, do primeiro contato à entrega." },
+    { n: "02", title: "Curadoria", text: "Portfólio selecionado entre marcas líderes globais." },
+    { n: "03", title: "Logística", text: "Entrega rápida e rastreável em todo o Brasil." },
+    { n: "04", title: "Confiança", text: "Fornecedor homologado para o setor público e privado." },
   ];
   return (
     <section className="py-28 sm:py-36 bg-background">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-gold-deep">Diferenciais</p>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl text-navy-deep leading-tight">
-            Excelência em <span className="text-gold-gradient">cada detalhe</span>
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.4em] text-gold-deep">Nosso método</p>
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl text-navy-deep leading-[1.05]">
+            Quatro pilares. Uma única <span className="text-gold-gradient">promessa.</span>
           </h2>
         </div>
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/70 rounded-2xl overflow-hidden border border-border/70">
-          {items.map((it) => (
-            <div
-              key={it.title}
-              className="group relative bg-white p-10 flex flex-col items-start hover:bg-secondary/40 transition-colors duration-500"
-            >
-              <span className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-gold/40 text-gold-deep group-hover:border-gold group-hover:text-navy-deep group-hover:bg-[image:var(--gradient-gold)] transition-all">
-                <it.icon size={20} strokeWidth={1.5} />
-              </span>
-              <h3 className="mt-8 text-lg font-display text-navy-deep tracking-tight">
-                {it.title}
+
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-border/70 border-t border-b sm:border-b-0 border-border/70">
+          {pillars.map((p) => (
+            <div key={p.n} className="group px-2 sm:px-8 py-10 first:sm:pl-0 last:sm:pr-0">
+              <div className="flex items-baseline gap-3">
+                <span className="font-display text-sm text-gold-deep tracking-wider">{p.n}</span>
+                <span className="h-px flex-1 bg-border/80 group-hover:bg-gold/60 transition-colors duration-300 ease-out" />
+              </div>
+              <h3 className="mt-6 font-display text-2xl text-navy-deep tracking-tight">
+                {p.title}
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                {it.text}
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs">
+                {p.text}
               </p>
             </div>
           ))}
