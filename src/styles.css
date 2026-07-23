@@ -149,7 +149,7 @@
 @utility animate-float { animation: float-slow 6s ease-in-out infinite; }
 @utility animate-marquee { animation: marquee 33s linear infinite; }
 @media (max-width: 640px) {
-  .animate-marquee { animation-duration: 22s; }
+  .animate-marquee { animation-duration: 20s; }
 }
 @utility animate-glow { animation: glow-pulse 3.5s ease-in-out infinite; }
 @utility animate-spin-slow { animation: spin-slow 24s linear infinite; }
