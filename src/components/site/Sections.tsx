@@ -15,10 +15,6 @@ import {
   Users,
   Expand,
   X,
-  Sparkles,
-  PackageCheck,
-  Truck,
-  Cpu,
   Check,
 } from "lucide-react";
 import { useEffect, useState } from "react";
