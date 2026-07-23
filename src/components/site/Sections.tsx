@@ -70,46 +70,30 @@ export function Differentials() {
 
 
 export function EmpresasResultados() {
-  const cards = [
-    {
-      icon: Laptop,
-      title: "Equipamentos Corporativos",
-      text: "Notebooks, computadores, monitores e soluções para ambientes profissionais.",
-    },
-    {
-      icon: Printer,
-      title: "Suprimentos para Impressão",
-      text: "Toners e cartuchos originais e compatíveis premium, com alto rendimento.",
-    },
-    {
-      icon: Headset,
-      title: "Atendimento Consultivo",
-      text: "Auxiliamos na escolha da melhor solução para cada necessidade do seu negócio.",
-    },
-    {
-      icon: BadgePercent,
-      title: "Condições Competitivas",
-      text: "Parcerias estratégicas que garantem excelente custo-benefício e previsibilidade.",
-    },
+  const segments = [
+    { icon: Laptop, title: "Escritórios & Empresas", text: "Ambientes corporativos que precisam de padronização e escala." },
+    { icon: Award, title: "Órgãos Públicos", text: "Prefeituras, secretarias e autarquias em pregões e dispensas." },
+    { icon: Headset, title: "Clínicas & Consultórios", text: "Operações que dependem de continuidade e suporte próximo." },
+    { icon: BadgePercent, title: "Educação & Terceiro Setor", text: "Escolas, cooperativas e instituições em expansão." },
   ];
   return (
     <section className="py-24 sm:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
-          eyebrow="Resultados que importam"
-          title="Empresas que buscam resultados escolhem a GV CONNECT"
+          eyebrow="Quem atendemos"
+          title="Feito para operações que não podem parar"
         />
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-          Oferecemos soluções tecnológicas completas para empresas que valorizam
-          desempenho, produtividade e atendimento especializado.
+          Trabalhamos lado a lado com organizações de diferentes portes e segmentos,
+          entregando previsibilidade em cada etapa do fornecimento.
         </p>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {cards.map((c) => (
+          {segments.map((c) => (
             <div
               key={c.title}
-              className="group relative p-7 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all duration-500"
+              className="group relative p-7 rounded-2xl border border-border bg-white hover:border-gold/60 hover:shadow-elevated transition-all duration-300 ease-out"
             >
-              <div className="h-12 w-12 rounded-xl bg-[image:var(--gradient-gold)] flex items-center justify-center shadow-gold ring-1 ring-gold/30 group-hover:scale-110 transition-transform">
+              <div className="h-12 w-12 rounded-xl bg-[image:var(--gradient-gold)] flex items-center justify-center shadow-gold ring-1 ring-gold/30 group-hover:scale-105 transition-transform duration-300 ease-out">
                 <c.icon className="text-navy-deep" size={22} />
               </div>
               <h3 className="mt-5 text-lg font-display text-navy-deep">{c.title}</h3>
@@ -121,6 +105,7 @@ export function EmpresasResultados() {
     </section>
   );
 }
+
 
 
 export function LenovoSection() {
