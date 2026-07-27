@@ -6,7 +6,7 @@ import { WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MSG } from "./WhatsAppFab";
 const links = [
   { href: "#top", label: "Início" },
   { href: "#solucoes", label: "Soluções" },
-  { href: "#licitacoes", label: "Licitações" },
+  { href: "#licitacoes", label: "Atuação" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#contato", label: "Contato" },
 ];
