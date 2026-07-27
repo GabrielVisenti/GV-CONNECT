@@ -515,7 +515,7 @@ export function Footer() {
             {[
               { href: "#top", l: "Início" },
               { href: "#solucoes", l: "Soluções" },
-              { href: "#licitacoes", l: "Licitações" },
+              { href: "#licitacoes", l: "Atuação" },
               { href: "#sobre", l: "Sobre Nós" },
               { href: "#contato", l: "Contato" },
             ].map((l) => (
