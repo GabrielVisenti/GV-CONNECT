@@ -13,11 +13,9 @@ import {
   Layers,
   Award,
   Users,
-  Expand,
-  X,
   Check,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
 import { WHATSAPP_HREF } from "./WhatsAppFab";
