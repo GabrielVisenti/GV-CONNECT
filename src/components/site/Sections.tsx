@@ -217,20 +217,6 @@ const SOLUTIONS = [
 ];
 
 export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
-  const [preview, setPreview] = useState<{ src: string; alt: string } | null>(null);
-
-  useEffect(() => {
-    if (!preview) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setPreview(null);
-    document.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [preview]);
-
   return (
     <section id="solucoes" className="relative py-24 sm:py-32 bg-gradient-to-b from-secondary via-white to-secondary overflow-hidden">
       {/* Ambient background accents */}
