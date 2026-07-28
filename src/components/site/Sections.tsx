@@ -234,12 +234,10 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                 key={s.title}
                 className="group relative flex flex-col rounded-3xl bg-white border border-border/70 overflow-hidden shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.08)] hover:shadow-elevated hover:-translate-y-1 hover:border-gold/60 transition-[transform,box-shadow,border-color] duration-300 ease-out"
               >
-                {/* Image showcase */}
-                <button
-                  type="button"
-                  onClick={() => setPreview({ src: `${s.imageBase}-1200.webp`, alt: s.title })}
-                  aria-label={`Ampliar imagem de ${s.title}`}
-                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                {/* Image showcase (static, non-interactive) */}
+                <div
+                  aria-hidden={false}
+                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-default select-none pointer-events-none"
                 >
                   <ResponsiveImage
                     base={s.imageBase}
@@ -247,18 +245,14 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     sizes="(min-width: 1024px) 440px, (min-width: 768px) 45vw, 92vw"
                     alt={s.title}
                     draggable={false}
-                    style={{ objectPosition: s.objectPosition }}
-                    className="absolute inset-0 h-full w-full object-cover select-none"
+                    style={{ objectPosition: s.objectPosition, userSelect: "none" }}
+                    className="absolute inset-0 h-full w-full object-cover select-none pointer-events-none"
                   />
 
-
                   {/* Subtle gradient sweep on hover */}
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
-                  {/* Zoom affordance */}
-                  <span className="absolute top-4 right-4 inline-flex items-center justify-center h-9 w-9 rounded-full bg-navy-deep/80 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Expand size={15} />
-                  </span>
-                </button>
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" aria-hidden />
+                </div>
+
 
                 {/* Content */}
                 <div className="relative flex flex-col flex-1 p-7 lg:p-8">
