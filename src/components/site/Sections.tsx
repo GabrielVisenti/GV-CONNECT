@@ -292,31 +292,6 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
         </div>
       </div>
 
-      {preview && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setPreview(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 p-4 sm:p-8"
-        >
-          <button
-            type="button"
-            onClick={() => setPreview(null)}
-            aria-label="Fechar"
-            className="absolute top-5 right-5 inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
-          >
-            <X size={20} />
-          </button>
-          <img
-            src={preview.src}
-            alt={preview.alt}
-            onClick={(e) => e.stopPropagation()}
-            draggable={false}
-            decoding="async"
-            className="max-h-[90vh] max-w-[92vw] object-contain rounded-xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)]"
-          />
-        </div>
-      )}
     </section>
   );
 }
