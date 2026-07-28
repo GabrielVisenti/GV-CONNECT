@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MSG } from "./WhatsAppFab";
+import { useHideOnScroll } from "@/hooks/use-hide-on-scroll";
 
 const links = [
   { href: "#top", label: "Início" },
@@ -14,38 +15,21 @@ const links = [
 const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MSG)}`;
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-    const update = () => {
-      const next = window.scrollY > 24;
-      setScrolled((prev) => (prev === next ? prev : next));
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-
+  const { hidden, scrolled } = useHideOnScroll({ hideAfter: 100, delta: 10, disabled: open });
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-50 will-change-transform transition-[transform,opacity,background-color,box-shadow] duration-300 ease-out ${
+        hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
+      } ${
         scrolled
           ? "bg-navy-deep/85 backdrop-blur-xl border-b border-gold/15 shadow-elevated"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-32 flex items-center justify-between">
+
         <Logo />
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (

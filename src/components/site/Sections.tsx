@@ -13,11 +13,9 @@ import {
   Layers,
   Award,
   Users,
-  Expand,
-  X,
   Check,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import type { QuoteType } from "./QuoteModal";
 import { Logo } from "./Logo";
 import { WHATSAPP_HREF } from "./WhatsAppFab";
@@ -217,20 +215,6 @@ const SOLUTIONS = [
 ];
 
 export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
-  const [preview, setPreview] = useState<{ src: string; alt: string } | null>(null);
-
-  useEffect(() => {
-    if (!preview) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setPreview(null);
-    document.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [preview]);
-
   return (
     <section id="solucoes" className="relative py-24 sm:py-32 bg-gradient-to-b from-secondary via-white to-secondary overflow-hidden">
       {/* Ambient background accents */}
@@ -248,12 +232,10 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                 key={s.title}
                 className="group relative flex flex-col rounded-3xl bg-white border border-border/70 overflow-hidden shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.08)] hover:shadow-elevated hover:-translate-y-1 hover:border-gold/60 transition-[transform,box-shadow,border-color] duration-300 ease-out"
               >
-                {/* Image showcase */}
-                <button
-                  type="button"
-                  onClick={() => setPreview({ src: `${s.imageBase}-1200.webp`, alt: s.title })}
-                  aria-label={`Ampliar imagem de ${s.title}`}
-                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                {/* Image showcase (static, non-interactive) */}
+                <div
+                  aria-hidden={false}
+                  className="relative w-full aspect-square bg-gradient-to-br from-platinum via-white to-platinum overflow-hidden isolate block cursor-default select-none pointer-events-none"
                 >
                   <ResponsiveImage
                     base={s.imageBase}
@@ -261,18 +243,14 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
                     sizes="(min-width: 1024px) 440px, (min-width: 768px) 45vw, 92vw"
                     alt={s.title}
                     draggable={false}
-                    style={{ objectPosition: s.objectPosition }}
-                    className="absolute inset-0 h-full w-full object-cover select-none"
+                    style={{ objectPosition: s.objectPosition, userSelect: "none" }}
+                    className="absolute inset-0 h-full w-full object-cover select-none pointer-events-none"
                   />
 
-
                   {/* Subtle gradient sweep on hover */}
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden />
-                  {/* Zoom affordance */}
-                  <span className="absolute top-4 right-4 inline-flex items-center justify-center h-9 w-9 rounded-full bg-navy-deep/80 text-gold backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Expand size={15} />
-                  </span>
-                </button>
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" aria-hidden />
+                </div>
+
 
                 {/* Content */}
                 <div className="relative flex flex-col flex-1 p-7 lg:p-8">
@@ -306,31 +284,6 @@ export function Solutions({ openQuote }: { openQuote: OpenQuote }) {
         </div>
       </div>
 
-      {preview && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setPreview(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 p-4 sm:p-8"
-        >
-          <button
-            type="button"
-            onClick={() => setPreview(null)}
-            aria-label="Fechar"
-            className="absolute top-5 right-5 inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
-          >
-            <X size={20} />
-          </button>
-          <img
-            src={preview.src}
-            alt={preview.alt}
-            onClick={(e) => e.stopPropagation()}
-            draggable={false}
-            decoding="async"
-            className="max-h-[90vh] max-w-[92vw] object-contain rounded-xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)]"
-          />
-        </div>
-      )}
     </section>
   );
 }
