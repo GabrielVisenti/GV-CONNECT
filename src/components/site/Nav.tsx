@@ -40,7 +40,11 @@ export function Nav() {
               href={l.href}
               className="relative text-sm font-medium text-platinum/80 hover:text-gold transition-colors after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
             >
-              {l.label}
+              {l.noTranslate ? (
+                <span translate="no" className="notranslate">{l.label}</span>
+              ) : (
+                l.label
+              )}
             </a>
           ))}
         </nav>
@@ -78,7 +82,11 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="text-platinum/90 text-base py-2 border-b border-white/5"
             >
-              {l.label}
+              {l.noTranslate ? (
+                <span translate="no" className="notranslate">{l.label}</span>
+              ) : (
+                l.label
+              )}
             </a>
           ))}
           <a
