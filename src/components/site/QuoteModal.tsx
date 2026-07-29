@@ -68,6 +68,9 @@ const EMPTY_FORM: Form = {
   email: "",
 };
 
+/** Nomes comerciais fixos — nunca traduzir nem alterar os valores internos. */
+const TONER_TYPES = ["Original", "Compatível Premium"] as const;
+
 const FOCUSABLE =
   'a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
 
