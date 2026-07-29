@@ -466,14 +466,20 @@ export function Footer() {
           <h4 className="text-xs uppercase tracking-[0.3em] text-gold-soft">Links rápidos</h4>
           <ul className="mt-5 grid grid-cols-2 gap-y-3 text-sm text-platinum/80">
             {[
-              { href: "#top", l: "Início" },
+              { href: "#top", l: "Início", noTranslate: true },
               { href: "#solucoes", l: "Soluções" },
               { href: "#licitacoes", l: "Atuação" },
               { href: "#sobre", l: "Sobre Nós" },
               { href: "#contato", l: "Contato" },
             ].map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="hover:text-gold transition-colors">{l.l}</a>
+                <a href={l.href} className="hover:text-gold transition-colors">
+                  {"noTranslate" in l && l.noTranslate ? (
+                    <span translate="no" className="notranslate">{l.l}</span>
+                  ) : (
+                    l.l
+                  )}
+                </a>
               </li>
             ))}
             <li>
