@@ -341,24 +341,28 @@ export const QuoteModal = memo(function QuoteModal({
                 <>
                   <Field label="Tipo" {...errorProps("tipo")}>
                     <div className="grid grid-cols-2 gap-2">
-                      {["Original", "Compatível Premium"].map((o, i) => (
+                      {TONER_TYPES.map((o, i) => (
                         <button
                           type="button"
                           key={o}
+                          translate="no"
                           data-field={i === 0 ? "tipo" : undefined}
                           aria-pressed={form.tipo === o}
+                          aria-label={o}
                           onClick={() => {
                             setTouched((t) => ({ ...t, tipo: true }));
                             setForm((f) => ({ ...f, tipo: o }));
                             setErrors((e) => ({ ...e, tipo: undefined }));
                           }}
-                          className={`px-3 py-2.5 rounded-xl border text-xs font-medium transition ${
+                          className={`notranslate px-3 py-2.5 rounded-xl border text-xs font-medium transition ${
                             form.tipo === o
                               ? "border-gold bg-navy text-white shadow-gold"
                               : "border-border hover:border-gold/60"
                           }`}
                         >
-                          {o}
+                          <span translate="no" className="notranslate">
+                            {o}
+                          </span>
                         </button>
                       ))}
                     </div>
