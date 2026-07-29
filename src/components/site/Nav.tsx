@@ -4,13 +4,15 @@ import { Logo } from "./Logo";
 import { WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MSG } from "./WhatsAppFab";
 import { useHideOnScroll } from "@/hooks/use-hide-on-scroll";
 
+const HOME_LABEL = "Início";
+
 const links = [
-  { href: "#top", label: "Início" },
+  { href: "#top", label: HOME_LABEL, noTranslate: true },
   { href: "#solucoes", label: "Soluções" },
   { href: "#licitacoes", label: "Atuação" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#contato", label: "Contato" },
-];
+] as { href: string; label: string; noTranslate?: boolean }[];
 
 const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MSG)}`;
 
